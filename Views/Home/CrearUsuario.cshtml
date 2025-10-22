@@ -1,0 +1,22 @@
+@{
+    @using (Html.BeginForm("ListarTareas", "Home", FormMethod.Get))
+  {
+    <button type="submit">Mostrar Tareas</button>
+  }
+  @using (Html.BeginForm("CrearTarea", "Home", FormMethod.Get))
+  {
+    <button type="submit">Crear Tarea</button>
+  }
+  @using (Html.BeginForm("EditarTarea", "Home", FormMethod.Get))
+  {
+    <button type="submit">Editar Tarea</button>
+  }
+   @using (Html.BeginForm("EliminarTarea", "Home", FormMethod.Get))
+  {
+    <button type="submit">Eliminar Tarea</button>
+  }
+   @using (Html.BeginForm("FinalizarTarea", "Home", FormMethod.Get))
+  {
+    <button type="submit">Finalizar Tarea</button>
+  }
+}
