@@ -1,0 +1,14 @@
+@{
+  <form action= '@Url.Action("CrearPreferencia", "Home")' method = "POST" enctype = "multipart/form-data"> 
+  nombre: <input type = "text" name="nombre" required/>
+  UserName: <input type = "text" name="usuario" required/>
+  Metodos: <input type = "text" name="metodos" required/>
+  Año escolar: <input type = "text" name="anioEscolar" required/>
+  Hobbies: <input type = "text" name="hobbies" required/>
+  Objeivos: <input type = "text" name="objetivos" required/>
+ <input type="hidden" name="idUsuario" value="@ViewBag.IdUsuario" />
+  <input type="submit" name="Enviar"/>
+</form>
+}
+
+
