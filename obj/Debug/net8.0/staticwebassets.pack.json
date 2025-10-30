@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\img\\divertite.jpg"
     },
     {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\logoFooter.png",
+      "PackagePath": "staticwebassets\\img\\logoFooter.png"
+    },
+    {
       "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\motivate.jpg",
       "PackagePath": "staticwebassets\\img\\motivate.jpg"
     },
@@ -35,6 +39,10 @@
     {
       "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\organizate.jpg",
       "PackagePath": "staticwebassets\\img\\organizate.jpg"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\redes.png",
+      "PackagePath": "staticwebassets\\img\\redes.png"
     },
     {
       "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\js\\site.js",

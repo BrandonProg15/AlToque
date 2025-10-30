@@ -50,23 +50,28 @@
 </section>
  </main>
   <footer>
-      <img src = "~/img/Logo.png" id = "LogoFooter"/>
+        <section class="logos-footer">
+      <img src = "~/img/logoFooter.png" id= logo1/>
+      <section class="contenido-footer">
+      <div class="botones-footer">
       <button type="button" class="btn btn-primary">Noticias</button>
       <button type="button" class="btn btn-secondary">Contactanos</button>
       <button type="button" class="btn btn-success">Sobre Nosotros</button>
       <button type="button" class="btn btn-danger">Equipo</button>
-        <div class="redes_sociales">
-          <img src="ig.png" id="instagram">
-          <img src="twitter.png" id="twitter">
-          <img src="youtube.png" id="youtube">
-          <img src="tiktok.png" id="tiktok">
-        </div>
-          <img src="logo2.png" id="logo_footer">
+      </div>
+      <div class="redes_sociales">
+         <img src = "~/img/redes.png"/>
+      </div>
+      </section>
+       <img src = "~/img/logoFooter.png" id= logo2/>
+             </section>
+
     </footer>
 
 <style>
+
 header {
-  width: 100%;
+  width: 98%;
   background-color: #D5E5F7;
   overflow: hidden;
   background-image: url('militar.jpg');
@@ -207,6 +212,34 @@ footer
   transition: all 0.2s ease;
   text-transform: uppercase;
   font-size: 70%;   
+  
+}
+.botones-footer{
+margin-left:20%;
+width: 80%;
+}
+footer img 
+{
+   width: 40%; 
+   height: auto; 
 }
 
+.contenido-footer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+.contenido-footer img{
+  margin-left: 25%;
+  width: 55%;
+}
+.logos-footer{
+      display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
 </style>

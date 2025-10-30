@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/Wj7Fmrq5UrlfW/kPKkmCp2A8b4Qa5nUmitNZ9Oj6SU=",
+  "Hash": "axRenljQr4FDSdg3tCagVP7yd77KmXHxkBce51Ef3mw=",
   "Source": "AlToque",
   "BasePath": "_content/AlToque",
   "Mode": "Default",
@@ -112,6 +112,25 @@
       "OriginalItemSpec": "wwwroot\\img\\Logo.png"
     },
     {
+      "Identity": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\logoFooter.png",
+      "SourceId": "AlToque",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\",
+      "BasePath": "_content/AlToque",
+      "RelativePath": "img/logoFooter.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logoFooter.png"
+    },
+    {
       "Identity": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\motivate.jpg",
       "SourceId": "AlToque",
       "SourceType": "Discovered",
@@ -167,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\organizate.jpg"
+    },
+    {
+      "Identity": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\redes.png",
+      "SourceId": "AlToque",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\",
+      "BasePath": "_content/AlToque",
+      "RelativePath": "img/redes.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\redes.png"
     },
     {
       "Identity": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\Thumbs.db",
