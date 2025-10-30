@@ -1,6 +1,5 @@
 ﻿
     <header>
-      <img src="logo.png" id="logo_footer">
         @{
     @using (Html.BeginForm("PedirUsuario", "Home", FormMethod.Get))
   {
@@ -10,16 +9,23 @@
   {
     <button type="submit">Iniciar Sesion</button>
   }
+   <img src = "~/img/Logo.png" id = "LogoHeader"/>
         }
  </header>
  <main> 
+ <section class="main-landing">
+ <div class="titulo-main-section">
  <h1>Hackea tu Focus</h1>
         <h3>Creado por y para estudiantes. Te ayudamos a vencer la procrastinación con acompañamiento personalizado, motivación constante y métodos únicos para hacer tus tareas a tu manera.</h3>
          @using (Html.BeginForm("IniciarSesion", "Home", FormMethod.Get))
   {
     <button type="submit">¡Empezá ahora!</button>
   }
+  </div>
+  <div>
    <img src = "~/img/Landing.png" id = "LandingPage"/>
+  </div>
+  </section>
 <section class="tarjetas">
       <div class="motivate">
       <img src = "~/img/motivate.jpg">
@@ -44,9 +50,7 @@
 </section>
  </main>
   <footer>
-        <div class="logo_footer">
-          <img src="logo2.png" id="logo_footer">
-        </div> 
+      <img src = "~/img/Logo.png" id = "LogoFooter"/>
       <button type="button" class="btn btn-primary">Noticias</button>
       <button type="button" class="btn btn-secondary">Contactanos</button>
       <button type="button" class="btn btn-success">Sobre Nosotros</button>
@@ -68,16 +72,20 @@ header {
   background-image: url('militar.jpg');
   position: sticky;
   top: 0;
-  
+  padding: 0.5% 1%;
+}
+header img, footer img 
+{
+width: 15%; 
+height: auto; 
 }
 
  header button {
   background: #2E286B;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   color: #fff;
   font-weight: bold;
-  padding: 1% 1%;
   margin: 1% 1% ;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -89,14 +97,54 @@ header {
   float: right; 
 }
 
-form button:hover {
+main button:hover, header button:hover {
 background: #17143b;
+}
+.main-landing{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2%;
+    align-items: start;
+    justify-content: center;
+    align-content: center;
+    justify-items: start;
+}
+.titulo-main-section{
+  margin-left: 10%;
+}
+.titulo-main-section button 
+{
+  padding: 3% 5%;
+  font-size: 100%; 
+}
+
+#LandingPage
+{
+  width: 120%;
+  height: auto;
+  margin-top: 10%; 
+}
+main h1 
+{
+  background-color: #75BBEE; 
+  width: 60%; 
+  height: auto; 
+  font-size: 400%;
+  color: #2E286B; 
+  border-radius: 15px;
+  text-align: center;
+  padding: 20px;
+}
+main h3
+{
+  font-size: 150%;
+  width: 70%; 
 }
 
 .organizate, .divertite, .motivate 
 {
-    width: 20%;
-    height: 60%;
+    width: 25%;
+    height: 100%;
     text-align: center;
     margin-top: 3%;
     border-radius: 12px;
@@ -105,8 +153,19 @@ background: #17143b;
     background-color: #D5E5F7;
     overflow: hidden;
     font-size: 115%;
-    margin-right: 10%;
-    margin-left: 5%;
+}
+main button 
+{
+  background: #2E286B;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  padding: 1% 1%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 70%;
 }
  .divertite img,.organizate img, .motivate img{
     width:40%;
@@ -122,9 +181,32 @@ background: #17143b;
     gap: 2%;
     width: 98%;
     margin: auto;
-    padding: 2% 0;
+    padding: 4% 0;
 }
-
-
+.tarjetas p{
+  height: 50px;
+}
+footer 
+{
+  width: 100%;
+  background-color: #D5E5F7;
+  overflow: hidden;
+  background-image: url('militar.jpg');
+  position: sticky;
+  top: 0;
+  
+}
+ footer button {
+  background: #D5E5F7;
+  color: #2C2C2C; 
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 1% 1%;
+  margin: 1% 1% ;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 70%;   
+}
 
 </style>

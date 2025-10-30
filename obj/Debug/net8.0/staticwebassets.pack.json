@@ -17,6 +17,26 @@
       "PackagePath": "staticwebassets\\img\\Logo.png"
     },
     {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\Thumbs.db",
+      "PackagePath": "staticwebassets\\img\\Thumbs.db"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\divertite.jpg",
+      "PackagePath": "staticwebassets\\img\\divertite.jpg"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\motivate.jpg",
+      "PackagePath": "staticwebassets\\img\\motivate.jpg"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\organizate.jfif",
+      "PackagePath": "staticwebassets\\img\\organizate.jfif"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\organizate.jpg",
+      "PackagePath": "staticwebassets\\img\\organizate.jpg"
+    },
+    {
       "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
