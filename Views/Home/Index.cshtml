@@ -19,29 +19,29 @@
   {
     <button type="submit">¡Empezá ahora!</button>
   }
-   <img src="∼/img/Landing.png" id="LandingFoto">
+   <img src = "~/img/Landing.png" id = "LandingPage"/>
+<section class="tarjetas">
+      <div class="motivate">
+      <img src = "~/img/motivate.jpg">
+      <h2>Motivate</h2>
+      <p>Te motivás con recompensas por tus logros y métodos personalizados que hacen cada tarea más fácil y divertida.</p>
+    
+    </div>
 
-   <div class="motivate" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Motivate</h5>
-    <p class="card-text">Te motivás con recompensas por tus logros y métodos personalizados que hacen cada tarea más fácil y divertida</p>
-  </div>
-</div>
-  <div class="organizate" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Organizate</h5>
-    <p class="card-text">Te organizas planificando tareas con fechas y prioridades, usando métodos que facilitan y optimizan cada actividad.</p>
-  </div>
-</div>
-  <div class="divertite" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Divertite</h5>
-    <p class="card-text">Podés divertirte completando tareas de forma personalizada, ganando recompensas y viendo cómo cada tarea se convierte en un juego que te motiva a seguir.</p>
-  </div>
-</div>
+   <div class="organizate">
+      <img src = "~/img/organizate.jpg" />
+      <h2>Organizate</h2>
+      <p>Te organizas planificando tareas con fechas y prioridades, usando métodos que facilitan y optimizan cada actividad.</p>
+
+    </div>
+
+    <div class="divertite">
+     <img src = "~/img/divertite.jpg"/>
+      <h2>Divertite</h2>
+      <p>Podés divertirte completando tareas de forma personalizada, ganando recompensas y viendo cómo cada tarea se convierte en un juego que te motiva a seguir.</p>
+    
+    </div>
+</section>
  </main>
   <footer>
         <div class="logo_footer">
@@ -60,4 +60,71 @@
           <img src="logo2.png" id="logo_footer">
     </footer>
 
+<style>
+header {
+  width: 100%;
+  background-color: #D5E5F7;
+  overflow: hidden;
+  background-image: url('militar.jpg');
+  position: sticky;
+  top: 0;
+  
+}
 
+ header button {
+  background: #2E286B;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  padding: 1% 1%;
+  margin: 1% 1% ;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 70%;
+  align-items: center;       
+  justify-content: center;    
+  text-align: center;
+  float: right; 
+}
+
+form button:hover {
+background: #17143b;
+}
+
+.organizate, .divertite, .motivate 
+{
+    width: 20%;
+    height: 60%;
+    text-align: center;
+    margin-top: 3%;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #D5E5F7;
+    overflow: hidden;
+    font-size: 115%;
+    margin-right: 10%;
+    margin-left: 5%;
+}
+ .divertite img,.organizate img, .motivate img{
+    width:40%;
+    height: 40%;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    border-radius: 50%;
+    margin-top: 3%;
+}
+.tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    width: 98%;
+    margin: auto;
+    padding: 2% 0;
+}
+
+
+
+</style>
