@@ -14,7 +14,5 @@ public class Preferencias
     public string anioEscolar {get; set;}
     public string hobbies {get; set;}
     public string objetivos {get; set;}
-    public string idUsuario {get; set;}
-
-
+    public int idUsuario {get; set;}
 }

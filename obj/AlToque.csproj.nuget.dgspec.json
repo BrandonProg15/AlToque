@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\49434754\\Downloads\\AlToque-main\\AlToque-main\\AlToque.csproj": {}
+    "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\AlToque.csproj": {}
   },
   "projects": {
-    "C:\\Users\\49434754\\Downloads\\AlToque-main\\AlToque-main\\AlToque.csproj": {
+    "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\AlToque.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\49434754\\Downloads\\AlToque-main\\AlToque-main\\AlToque.csproj",
+        "projectUniqueName": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\AlToque.csproj",
         "projectName": "AlToque",
-        "projectPath": "C:\\Users\\49434754\\Downloads\\AlToque-main\\AlToque-main\\AlToque.csproj",
+        "projectPath": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\AlToque.csproj",
         "packagesPath": "C:\\Users\\49434754\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\49434754\\Downloads\\AlToque-main\\AlToque-main\\obj\\",
+        "outputPath": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

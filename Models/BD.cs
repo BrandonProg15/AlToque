@@ -9,21 +9,22 @@ namespace AlToque.Controllers;
 
 public static class BD
 {
-    private static string _connectionString = @"Server=localhost; DataBase=Altoque;Integrated Security=True;TrustServerCertificate=True;";
+    private static string _connectionString = @"Server=localhost; DataBase=AlToque;Integrated Security=True;TrustServerCertificate=True;";
     private static int IdUsuario = 0;
 
-    public static List<Tarea> ListarTareas()
+    public static List<Tarea> ListarTareas(int idUsuario)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string storedProcedure = "ListarTareas";
             var tareas = connection.Query<Tarea>(
                 storedProcedure,
+                 new { idUsuario = idUsuario},
                 commandType: CommandType.StoredProcedure
             ).ToList();
             return tareas;
         }
-    }
+    } 
     public static void CrearTarea(string titulo, string descripcion, DateTime fechaInicio, DateTime fechaFin, bool esActivo, int IdUsuario)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -51,33 +52,54 @@ public static class BD
         }
     }
     public static int CrearUsuarioBASE(string mail, string contrasenia)
+{
+    using (SqlConnection connection = new SqlConnection(_connectionString))
     {
-        int usuarioOk;
-        using (SqlConnection connection = new SqlConnection(_connectionString))
-        {
-            string storedProcedure = "CrearUsuario";
+        string storedProcedure = "CrearUsuario";
 
-            usuarioOk = connection.Execute(
-            storedProcedure,
-            new { mail = mail, contrasenia = contrasenia },
-            commandType: CommandType.StoredProcedure);
-            return usuarioOk;
-        }
+      int idUsuario = connection.QuerySingleOrDefault<int>(
+    storedProcedure,
+    new { mail, contrasenia },
+    commandType: CommandType.StoredProcedure
+    );
+    return idUsuario;
+
     }
-    public static int CrearPreferenciaBASE(string nombre, string usuario, string metodos, string anioEscolar, string hobbies, string objetivos, int idUsuario)
+}
+
+    public static int CrearPreferenciaBASE(
+    string nombre,
+    string usuario,
+    string metodos,
+    string anioEscolar,
+    string hobbies,
+    string objetivos,
+    int idUsuario
+)
+{
+    using (SqlConnection connection = new SqlConnection(_connectionString))
     {
-        int usuarioOk;
-        using (SqlConnection connection = new SqlConnection(_connectionString))
-        {
-            string storedProcedure = "CrearPreferencia";
+        string storedProcedure = "CrearPreferencia";
 
-            usuarioOk = connection.Execute(
+        // Aquí los nombres del objeto deben coincidir con los parámetros del SP
+        var parametros = new
+        {
+            nombre = nombre,
+            usuario = usuario,      // coincide con @usuario en el SP
+            metodo = metodos,       // coincide con @metodo en el SP
+            anioEscolar = anioEscolar,
+            hobbies = hobbies,
+            objetivos = objetivos,
+            idUsuario = idUsuario
+        };
+
+        return connection.Execute(
             storedProcedure,
-            new { nombre = nombre, usuario = usuario, metodosUsas = metodos, AnioEscolar = anioEscolar, Hobbies = hobbies, Objetivos = objetivos, idUsuario = idUsuario },
-            commandType: CommandType.StoredProcedure);
-            return usuarioOk;
-        }
+            parametros,
+            commandType: CommandType.StoredProcedure
+        );
     }
+}
     public static int IniciarSesionBASE(string nombre, string contrasenia)
     {
         int usuarioOk;

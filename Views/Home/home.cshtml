@@ -1,23 +1,48 @@
+@using AlToque.Models
 
-@{
-    @using (Html.BeginForm("ListarTareas", "Home", FormMethod.Get))
-  {
-    <button type="submit">Mostrar Tareas</button>
-  }
-  @using (Html.BeginForm("CrearTarea", "Home", FormMethod.Get))
-  {
-    <button type="submit">Crear Tarea</button>
-  }
-  @using (Html.BeginForm("EditarTarea", "Home", FormMethod.Get))
-  {
-    <button type="submit">Editar Tarea</button>
-  }
-   @using (Html.BeginForm("EliminarTarea", "Home", FormMethod.Get))
-  {
-    <button type="submit">Eliminar Tarea</button>
-  }
-   @using (Html.BeginForm("FinalizarTarea", "Home", FormMethod.Get))
-  {
-    <button type="submit">Finalizar Tarea</button>
-  }
-}
+<header>
+</header>
+
+<main> 
+
+    @using (Html.BeginForm("Recompensas", "Home", FormMethod.Get))
+    {
+        <button type="submit">Recompensas</button>
+    }
+
+    @using (Html.BeginForm("Tareas", "Home", FormMethod.Get))
+    {
+        <button type="submit">Tareas</button>
+    }
+
+    @using (Html.BeginForm("Metodos", "Home", FormMethod.Get))
+    {
+        <button type="submit">Métodos</button>
+    }
+
+    @using (Html.BeginForm("Calendario", "Home", FormMethod.Get))
+    {
+        <button type="submit">Calendario</button>
+    }
+
+    @if (ViewBag.tareas != null)
+    {
+        <h2>Tareas que vencen en menos de 10 días ⏳</h2>
+
+        @foreach (var tarea in ViewBag.tareas)
+        {
+            <div class="card mb-3 p-3 shadow-sm">
+                <h4>@tarea.titulo</h4>
+                <p>@tarea.descripcion</p>
+                <p><strong>Inicio:</strong> @tarea.fechaInicio.ToShortDateString()</p>
+                <p><strong>Fin:</strong> @tarea.fechaFin.ToShortDateString()</p>
+                <p><strong>Usuario:</strong> @tarea.IdUsuario</p>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No hay tareas próximas a vencer 🎉</p>
+    }
+
+</main>

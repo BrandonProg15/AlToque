@@ -1,37 +1,7 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
+﻿
     <header>
-        <div class="header-inner">
-            <img src="logo.png" id="logo_header">
-          <nav>
-            <ul>
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="productos.html">Productos</a></li>
-              <li><a href="historia.html">Historia</a></li>
-              <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-    <main>
-      
-    </form>
-
-    </main>
-    <footer>
-    
-        </div>
-    </footer>
-</body>
-</html>
-@{
+      <img src="logo.png" id="logo_footer">
+        @{
     @using (Html.BeginForm("PedirUsuario", "Home", FormMethod.Get))
   {
     <button type="submit">Registrar Usuario</button>
@@ -40,4 +10,54 @@
   {
     <button type="submit">Iniciar Sesion</button>
   }
-}
+        }
+ </header>
+ <main> 
+ <h1>Hackea tu Focus</h1>
+        <h3>Creado por y para estudiantes. Te ayudamos a vencer la procrastinación con acompañamiento personalizado, motivación constante y métodos únicos para hacer tus tareas a tu manera.</h3>
+         @using (Html.BeginForm("IniciarSesion", "Home", FormMethod.Get))
+  {
+    <button type="submit">¡Empezá ahora!</button>
+  }
+   <img src="∼/img/Landing.png" id="LandingFoto">
+
+   <div class="motivate" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Motivate</h5>
+    <p class="card-text">Te motivás con recompensas por tus logros y métodos personalizados que hacen cada tarea más fácil y divertida</p>
+  </div>
+</div>
+  <div class="organizate" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Organizate</h5>
+    <p class="card-text">Te organizas planificando tareas con fechas y prioridades, usando métodos que facilitan y optimizan cada actividad.</p>
+  </div>
+</div>
+  <div class="divertite" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Divertite</h5>
+    <p class="card-text">Podés divertirte completando tareas de forma personalizada, ganando recompensas y viendo cómo cada tarea se convierte en un juego que te motiva a seguir.</p>
+  </div>
+</div>
+ </main>
+  <footer>
+        <div class="logo_footer">
+          <img src="logo2.png" id="logo_footer">
+        </div> 
+      <button type="button" class="btn btn-primary">Noticias</button>
+      <button type="button" class="btn btn-secondary">Contactanos</button>
+      <button type="button" class="btn btn-success">Sobre Nosotros</button>
+      <button type="button" class="btn btn-danger">Equipo</button>
+        <div class="redes_sociales">
+          <img src="ig.png" id="instagram">
+          <img src="twitter.png" id="twitter">
+          <img src="youtube.png" id="youtube">
+          <img src="tiktok.png" id="tiktok">
+        </div>
+          <img src="logo2.png" id="logo_footer">
+    </footer>
+
+

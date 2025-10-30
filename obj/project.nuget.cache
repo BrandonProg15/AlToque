@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dDSEpezIWlkHtkpQAw4PZ3MgbT++/3n2zNvkPNAASmcQSJadJNX7qOusYSikE1W9cLt1yqA+weGiAeuc/TtDyg==",
+  "dgSpecHash": "OPugnnLQkft47kDxhsRchnsqDxZuRKXAdjx+WP84TO0IE9qJSKOXI2CebCBILHmkSwXUXQARi+VYerYzklwnlw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\49434754\\Downloads\\AlToque-main\\AlToque-main\\AlToque.csproj",
+  "projectFilePath": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\AlToque.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\49434754\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\49434754\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

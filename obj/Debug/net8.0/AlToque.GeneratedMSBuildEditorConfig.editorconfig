@@ -9,67 +9,71 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AlToque
 build_property.RootNamespace = AlToque
-build_property.ProjectDir = C:\Users\49434754\Downloads\AlToque-main\AlToque-main\
+build_property.ProjectDir = Z:\AlToque CARPETA\AlToque-main (3)\AlToque-main (2)\AlToque-main\AlToque-main\AlToque-main\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\49434754\Downloads\AlToque-main\AlToque-main
+build_property.MSBuildProjectDirectory = Z:\AlToque CARPETA\AlToque-main (3)\AlToque-main (2)\AlToque-main\AlToque-main\AlToque-main
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/49434754/Downloads/AlToque-main/AlToque-main/Views/Home/CrearTarea.cshtml]
+[Z:/AlToque CARPETA/AlToque-main (3)/AlToque-main (2)/AlToque-main/AlToque-main/AlToque-main/Views/Home/CrearTarea.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhclRhcmVhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49434754/Downloads/AlToque-main/AlToque-main/Views/Home/EditarTarea.cshtml]
+[Z:/AlToque CARPETA/AlToque-main (3)/AlToque-main (2)/AlToque-main/AlToque-main/AlToque-main/Views/Home/EditarTarea.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0YXJUYXJlYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49434754/Downloads/AlToque-main/AlToque-main/Views/Home/EliminarTarea.cshtml]
+[Z:/AlToque CARPETA/AlToque-main (3)/AlToque-main (2)/AlToque-main/AlToque-main/AlToque-main/Views/Home/EliminarTarea.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFbGltaW5hclRhcmVhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49434754/Downloads/AlToque-main/AlToque-main/Views/Home/ErrorUsuario.cshtml]
+[Z:/AlToque CARPETA/AlToque-main (3)/AlToque-main (2)/AlToque-main/AlToque-main/AlToque-main/Views/Home/ErrorUsuario.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvclVzdWFyaW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49434754/Downloads/AlToque-main/AlToque-main/Views/Home/home.cshtml]
+[Z:/AlToque CARPETA/AlToque-main (3)/AlToque-main (2)/AlToque-main/AlToque-main/AlToque-main/Views/Home/home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxob21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49434754/Downloads/AlToque-main/AlToque-main/Views/Home/Index.cshtml]
+[Z:/AlToque CARPETA/AlToque-main (3)/AlToque-main (2)/AlToque-main/AlToque-main/AlToque-main/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49434754/Downloads/AlToque-main/AlToque-main/Views/Home/IniciarSesion.cshtml]
+[Z:/AlToque CARPETA/AlToque-main (3)/AlToque-main (2)/AlToque-main/AlToque-main/AlToque-main/Views/Home/IniciarSesion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmljaWFyU2VzaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49434754/Downloads/AlToque-main/AlToque-main/Views/Home/ListarTareas.cshtml]
+[Z:/AlToque CARPETA/AlToque-main (3)/AlToque-main (2)/AlToque-main/AlToque-main/AlToque-main/Views/Home/ListarTareas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0YXJUYXJlYXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49434754/Downloads/AlToque-main/AlToque-main/Views/Home/PedirUsuario.cshtml]
+[Z:/AlToque CARPETA/AlToque-main (3)/AlToque-main (2)/AlToque-main/AlToque-main/AlToque-main/Views/Home/PedirUsuario.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZWRpclVzdWFyaW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49434754/Downloads/AlToque-main/AlToque-main/Views/Home/Preferencias.cshtml]
+[Z:/AlToque CARPETA/AlToque-main (3)/AlToque-main (2)/AlToque-main/AlToque-main/AlToque-main/Views/Home/Preferencias.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcmVmZXJlbmNpYXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49434754/Downloads/AlToque-main/AlToque-main/Views/Shared/_Layout.cshtml]
+[Z:/AlToque CARPETA/AlToque-main (3)/AlToque-main (2)/AlToque-main/AlToque-main/AlToque-main/Views/Home/Tareas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUYXJlYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/AlToque CARPETA/AlToque-main (3)/AlToque-main (2)/AlToque-main/AlToque-main/AlToque-main/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49434754/Downloads/AlToque-main/AlToque-main/Views/Shared/_ValidationScriptsPartial.cshtml]
+[Z:/AlToque CARPETA/AlToque-main (3)/AlToque-main (2)/AlToque-main/AlToque-main/AlToque-main/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49434754/Downloads/AlToque-main/AlToque-main/Views/_ViewImports.cshtml]
+[Z:/AlToque CARPETA/AlToque-main (3)/AlToque-main (2)/AlToque-main/AlToque-main/AlToque-main/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49434754/Downloads/AlToque-main/AlToque-main/Views/_ViewStart.cshtml]
+[Z:/AlToque CARPETA/AlToque-main (3)/AlToque-main (2)/AlToque-main/AlToque-main/AlToque-main/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
