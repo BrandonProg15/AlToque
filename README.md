@@ -1,1 +1,1 @@
-pensalo al toque o algo asi 😎😎
+escanea, hacelo, altoque
