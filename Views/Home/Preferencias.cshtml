@@ -1,0 +1,261 @@
+@{
+    ViewData["Title"] = "Preferencias";
+}
+
+<header>
+  <img src="~/img/Logo.png" id="LogoHeader" />
+</header>
+
+<section class="main-form">
+  <div class="subscription-form">
+    <h2>Crear Preferencia</h2>
+    <form action='@Url.Action("CrearPreferencia", "Home")' method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" placeholder="Escribe tu nombre..." required />
+      </div>
+
+      <div class="form-group">
+        <label for="usuario">Usuario</label>
+        <input type="text" name="usuario" placeholder="Tu nombre de usuario..." required />
+      </div>
+
+      <div class="form-group">
+        <label for="metodos">Métodos</label>
+        <input type="text" name="metodos" placeholder="Tus métodos de estudio..." required />
+      </div>
+
+      <div class="form-group">
+        <label for="anioEscolar">Año escolar</label>
+        <input type="text" name="anioEscolar" placeholder="Ej. 2025" required />
+      </div>
+
+      <div class="form-group">
+        <label for="hobbies">Hobbies</label>
+        <input type="text" name="hobbies" placeholder="Tus pasatiempos..." required />
+      </div>
+
+      <div class="form-group">
+        <label for="objetivos">Objetivos</label>
+        <input type="text" name="objetivos" placeholder="Tus metas personales..." required />
+      </div>
+
+      <div class="submit-btns">
+        <input type="hidden" name="idUsuario" value="@ViewBag.IdUsuario" />
+        <input type="submit" class="submit-btn" value="Enviar" />
+        <button type="button" class="cancelar" onclick="mostrarPopup()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="deco-form">
+    <img src="~/img/imagen-form.png" alt="Decoración del formulario" />
+  </div>
+</section>
+
+<div id="popupOverlay" class="popup-overlay">
+  <div class="popup">
+    <h3>¿Seguro que deseas cancelar el formulario?</h3>
+    <div class="popup-buttons">
+      <button class="popup-btn cancel" onclick="cerrarPopup()">No</button>
+      <button class="popup-btn confirm" onclick="confirmarCancelacion()">Sí, cancelar</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <section class="logos-footer">
+    <img src="~/img/logoFooter.png" id="logo1" />
+    <section class="contenido-footer">
+      <div class="botones-footer">
+        <button type="button" class="btn btn-primary">Noticias</button>
+        <button type="button" class="btn btn-secondary">Contactanos</button>
+        <button type="button" class="btn btn-success">Sobre Nosotros</button>
+        <button type="button" class="btn btn-danger">Equipo</button>
+      </div>
+      <div class="redes_sociales">
+        <img src="~/img/redes.png" />
+      </div>
+    </section>
+    <img src="~/img/logoFooter.png" id="logo2" />
+  </section>
+</footer>
+
+<script>
+  function mostrarPopup() {
+    document.getElementById("popupOverlay").style.display = "flex";
+  }
+
+  function cerrarPopup() {
+    document.getElementById("popupOverlay").style.display = "none";
+  }
+
+  function confirmarCancelacion() {
+    window.location.href = '@Url.Action("CancelarPreferencias", "Home")';
+  }
+</script>
+
+<style>
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffff;
+  margin: 0;
+  padding: 0;
+}
+
+.main-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 4% 8%;
+}
+
+.subscription-form {
+  background-color: #fff;
+  border: 1px solid #75BBEE;
+  border-radius: 15px;
+  padding: 3%;
+  width: 45%;
+  box-shadow: 0px 4px 10px rgba(117, 187, 238, 0.4);
+}
+
+.subscription-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2E286B;
+  font-size: 22px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  color: #2E286B;
+  font-weight: bold;
+}
+
+.form-group input {
+  border: 1px solid #75BBEE;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #2E286B;
+  outline: none;
+}
+
+.submit-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.submit-btn, .cancelar {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn{
+  background-color: #2E286B;
+  color: white;
+}
+
+.cancelar {
+  background-color: #D52F2F;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #3b3187;
+}
+
+.cancel-btn:hover {
+  background-color: #b81f1f;
+}
+
+.deco-form {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deco-form img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 320px;
+}
+
+.popup h3 {
+  margin-bottom: 20px;
+  color: #2E286B;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.popup-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.popup-btn.cancel {
+  background-color: #2E286B;
+  color: white;
+}
+
+.popup-btn.confirm {
+  background-color: #D52F2F;
+  color: white;
+}
+
+.popup-btn.cancel:hover {
+  background-color: #3b3187;
+}
+
+.popup-btn.confirm:hover {
+  background-color: #b81f1f;
+}
+</style>

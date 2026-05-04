@@ -1,0 +1,337 @@
+@model AlToque.Controllers.HomeController.CalendarioViewModel
+@using AlToque.Models
+
+<header> 
+    @using (Html.BeginForm("Usuario", "Home", FormMethod.Get))
+    {
+        <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
+            <img src="~/img/usuario2.png" alt="Usuario" style="width:40px; height:40px;" />  
+        </button>
+    }
+
+    @using (Html.BeginForm("Recompensas", "Home", FormMethod.Get))
+    {
+        <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
+            <img src="~/img/tukiCoin.png" alt="Usuario" style="width:50px; height:50px;" />
+            <h3 style="color:black;">$<span id="tukimonedas">@ViewBag.tukimonedas</span></h3>
+        </button>
+    }
+
+    @using (Html.BeginForm("Recompensas", "Home", FormMethod.Get))
+    {
+        <button type="submit">Recompensas</button>
+    }
+
+    @using (Html.BeginForm("Tareas", "Home", FormMethod.Get))
+    {
+        <button type="submit">Tareas</button>
+    }
+
+    @using (Html.BeginForm("Metodos", "Home", FormMethod.Get))
+    {
+        <button type="submit">Métodos</button>
+    }
+
+    @using (Html.BeginForm("Calendario", "Home", FormMethod.Get))
+    {
+        <button type="submit">Calendario</button>
+    }
+
+    @using (Html.BeginForm("Home", "Home", FormMethod.Get))
+    {
+        <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
+            <img src="~/img/Logo.png" alt="logo" style="width:30%; height:auto; margin-left:-90%;" />
+        </button>
+    }
+</header>
+
+@{
+    string[] meses = { "", "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic" };
+    string[] dias = { "D", "L", "M", "M", "J", "V", "S" };
+}
+
+<main class="main">
+    <section class="seccion-tareas">
+
+        <div class="tareas-recientes">
+            Tareas recientes
+        </div>
+        <div class="lista-tareas">
+            <div class="tareas-header">
+                <h3 class="titulo-seccion">Tareas</h3>
+                 @using (Html.BeginForm("Tareas", "Home", FormMethod.Get))
+                {
+                    <button class= tareas-add type="submit">+</button>
+                }
+            </div>
+
+            <div class="tareas-lista">
+                 @foreach (var tarea in ViewBag.tareas)
+                {
+                    var letra = tarea.titulo.Substring(0,1).ToUpper();
+                    <div class="tarea-item">
+
+                        <div class="tarea-icon">@letra</div>
+
+                        <span class="tarea-nombre">@tarea.titulo</span>
+
+                        <img src="~/img/basura.png" class="tarea-btn" />
+                        <img src="~/img/check.png" class="tarea-btn" />
+                    </div>
+               }
+            </div>
+        </div>
+
+    </section>
+
+    <section class="seccion-calendario">
+        <div class="cal-container">
+
+            <div class="cal-header">
+                <h2>Calendario</h2>
+                <div class="save-btn">📅</div>
+            </div>
+
+            <div class="cal-nav">
+                <a href="@Url.Action("Calendario", "Home", new { year = Model.Year, month = Model.Month - 1 })">◀</a>
+                <span>@meses[Model.Month]</span>
+                <a href="@Url.Action("Calendario", "Home", new { year = Model.Year, month = Model.Month + 1 })">▶</a>
+                <span class="year-display">@Model.Year</span>
+                <a href="@Url.Action("Calendario", "Home", new { year = Model.Year - 1, month = Model.Month })">◀</a>
+                <a href="@Url.Action("Calendario", "Home", new { year = Model.Year + 1, month = Model.Month })">▶</a>
+            </div>
+
+            <div class="cal-grid">
+                @foreach (var d in dias)
+                {
+                    <div class="cal-dayname">@d</div>
+                }
+
+                @{
+                    int blanks = Model.StartWeekDay - 1;
+                    for (int i = 0; i < blanks; i++)
+                    {
+                        <div class="empty"></div>
+                    }
+
+                    for (int dia = 1; dia <= Model.DaysInMonth; dia++)
+                    {
+                        <button class="day-btn" onclick="selectDay(this)">@dia</button>
+                    }
+                }
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <section class="logos-footer">
+        <img src="~/img/logoFooter.png" id="logo1" />
+        <section class="contenido-footer">
+            <div class="botones-footer">
+                <button type="button" class="btn btn-primary">Noticias</button>
+                <button type="button" class="btn btn-secondary">Contactanos</button>
+                <button type="button" class="btn btn-success">Sobre Nosotros</button>
+                <button type="button" class="btn btn-danger">Equipo</button>
+            </div>
+            <div class="redes_sociales">
+                <img src="~/img/redes.png" />
+            </div>
+        </section>
+        <img src="~/img/logoFooter.png" id="logo2" />
+    </section>
+</footer>
+
+<script>
+    let selected = null;
+    function selectDay(btn) {
+        if (selected) selected.classList.remove("selected");
+        btn.classList.add("selected");
+        selected = btn;
+    }
+</script>
+
+<style>
+.main{
+    display: flex;
+    padding: 3%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center
+}
+section{
+    width:45%;
+}
+.seccion-calendario{
+
+}
+
+.titulo-seccion{
+    margin:0%;
+}
+
+.tareas-recientes {
+    background-color: #DFFBFB;
+    border: solid 3px #75BBEE;
+    border-radius: 20px;
+    border-radius:20px;
+    padding:3%;
+    width:56%;
+    margin-left:12%;
+    font-size:150%;
+    text-align:center;
+    margin-bottom:3%;
+}
+
+.tareas-header {
+    background:#0098D1;
+    width:80%;
+    margin-top:2%;
+    padding:2%;
+    border-radius:15px 15px 0 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.tareas-add {
+    background:#2E286B;
+    color:white;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:none;
+    font-size:22px;
+    cursor:pointer;
+}
+
+.tareas-lista {
+    background:#dbe9ff;
+    width:80%;
+    padding:2%;
+    border-radius:0 0 15px 15px;
+}
+
+.tarea-item {
+    display:flex;
+    align-items:center;
+    padding:10px;
+    border-bottom:1px solid #c2d9f2;
+}
+
+.tarea-icon {
+    width: 5%;            
+    aspect-ratio: 1;       
+    background: #2E286B;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 100%;      
+    min-width: 35px;       
+}
+
+.tarea-nombre {
+    margin-left: 3%;
+    flex-grow: 1;
+    font-size: clamp(12px, 1.2vw, 20px); 
+}
+
+.tarea-btn {
+    width: 4%;
+    aspect-ratio: 1;        
+    cursor: pointer;
+    min-width: 18px;        
+    margin-right: 2%;
+}
+
+.lista-tareas{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+.cal-container {
+    width: 65%;
+    padding: 1%;
+    border-radius: 15px;
+    background: #dbe9ff;
+    font-family: Segoe UI, sans-serif;
+    margin-top: 0%;
+}
+
+.cal-header {
+    background: #0098D1;
+    padding: 2%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cal-header h2 {
+    margin: 0;
+    font-size: 130%;
+    color: black;
+}
+
+.save-btn { 
+    font-size: 25px; 
+    cursor: pointer; 
+}
+
+.cal-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 120%;
+    align-items: center;
+}
+
+.cal-nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1%;
+    margin-top: 10%;
+}
+
+.cal-dayname {
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+
+.day-btn {
+    width: 80%;      
+    aspect-ratio: 1; 
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    font-size: 1vw;  
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.day-btn:hover { 
+    background:#b6daf7; 
+}
+
+.selected {
+    background: #009fe3 !important;
+    color: white !important;
+}
+
+</style>

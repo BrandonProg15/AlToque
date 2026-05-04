@@ -1,63 +1,219 @@
 {
   "Files": [
     {
-      "Id": "Z:\\2025\\AlToque\\AlToque\\wwwroot\\css\\site.css",
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "Z:\\2025\\AlToque\\AlToque\\wwwroot\\favicon.ico",
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "Z:\\2025\\AlToque\\AlToque\\wwwroot\\js\\site.js",
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img.zip",
+      "PackagePath": "staticwebassets\\img.zip"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\Google__G__logo.svg.png",
+      "PackagePath": "staticwebassets\\img\\Google__G__logo.svg.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\Landing.png",
+      "PackagePath": "staticwebassets\\img\\Landing.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\Logo.png",
+      "PackagePath": "staticwebassets\\img\\Logo.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\Thumbs.db",
+      "PackagePath": "staticwebassets\\img\\Thumbs.db"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\Tuki.jpg",
+      "PackagePath": "staticwebassets\\img\\Tuki.jpg"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\TukiBufon.png",
+      "PackagePath": "staticwebassets\\img\\TukiBufon.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\TukiPrincesa.png",
+      "PackagePath": "staticwebassets\\img\\TukiPrincesa.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\TukiRey.png",
+      "PackagePath": "staticwebassets\\img\\TukiRey.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\TukiVaquero.png",
+      "PackagePath": "staticwebassets\\img\\TukiVaquero.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\basura.png",
+      "PackagePath": "staticwebassets\\img\\basura.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\check.png",
+      "PackagePath": "staticwebassets\\img\\check.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\cornell.jpg",
+      "PackagePath": "staticwebassets\\img\\cornell.jpg"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\divertite.jpg",
+      "PackagePath": "staticwebassets\\img\\divertite.jpg"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\eliminar.jpg",
+      "PackagePath": "staticwebassets\\img\\eliminar.jpg"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\feynman.png",
+      "PackagePath": "staticwebassets\\img\\feynman.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\flashcards.jpg",
+      "PackagePath": "staticwebassets\\img\\flashcards.jpg"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\gorroBruja.png",
+      "PackagePath": "staticwebassets\\img\\gorroBruja.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\gorroBufon.png",
+      "PackagePath": "staticwebassets\\img\\gorroBufon.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\gorroPirata.png",
+      "PackagePath": "staticwebassets\\img\\gorroPirata.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\gorroPrincesa.png",
+      "PackagePath": "staticwebassets\\img\\gorroPrincesa.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\gorroRey.png",
+      "PackagePath": "staticwebassets\\img\\gorroRey.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\gorroVaquero.png",
+      "PackagePath": "staticwebassets\\img\\gorroVaquero.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\imagen-form.png",
+      "PackagePath": "staticwebassets\\img\\imagen-form.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\index.png",
+      "PackagePath": "staticwebassets\\img\\index.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\lapiz.png",
+      "PackagePath": "staticwebassets\\img\\lapiz.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\logoFooter.png",
+      "PackagePath": "staticwebassets\\img\\logoFooter.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\menu-recompensas.png",
+      "PackagePath": "staticwebassets\\img\\menu-recompensas.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\motivate.jpg",
+      "PackagePath": "staticwebassets\\img\\motivate.jpg"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\organizate.jpg",
+      "PackagePath": "staticwebassets\\img\\organizate.jpg"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\pelicula.jpg",
+      "PackagePath": "staticwebassets\\img\\pelicula.jpg"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\pregunta.png",
+      "PackagePath": "staticwebassets\\img\\pregunta.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\redes.png",
+      "PackagePath": "staticwebassets\\img\\redes.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\rehacer.png",
+      "PackagePath": "staticwebassets\\img\\rehacer.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\tukiBruja.png",
+      "PackagePath": "staticwebassets\\img\\tukiBruja.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\tukiCoin.png",
+      "PackagePath": "staticwebassets\\img\\tukiCoin.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\tukiPirata.png",
+      "PackagePath": "staticwebassets\\img\\tukiPirata.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\usuario1.png",
+      "PackagePath": "staticwebassets\\img\\usuario1.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\img\\usuario2.png",
+      "PackagePath": "staticwebassets\\img\\usuario2.png"
+    },
+    {
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "Z:\\2025\\AlToque\\AlToque\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "Z:\\2025\\AlToque\\AlToque\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "Z:\\2025\\AlToque\\AlToque\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "Z:\\2025\\AlToque\\AlToque\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "Z:\\2025\\AlToque\\AlToque\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "Z:\\2025\\AlToque\\AlToque\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "Z:\\2025\\AlToque\\AlToque\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "Z:\\2025\\AlToque\\AlToque\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "Z:\\2025\\AlToque\\AlToque\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "Z:\\2025\\AlToque\\AlToque\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "Z:\\2025\\AlToque\\AlToque\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "Z:\\2025\\AlToque\\AlToque\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "Z:\\AlToque CARPETA\\AlToque-main (3)\\AlToque-main (2)\\AlToque-main\\AlToque-main\\AlToque-main\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using AlToque.Models;
 using Microsoft.Data.SqlClient; 
 using Dapper; 
-namespace AlToque.Controllers;
+namespace AlToque.Models;
 
 public class Tarea
 {

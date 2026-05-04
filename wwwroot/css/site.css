@@ -1,23 +1,318 @@
-html {
-  font-size: 14px;
-  min-height: 100%;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
+/* ---------------------- */
+/* -------- GLOBAL ------- */
+/* ---------------------- */
 
 body {
-  margin: 10px;
-  padding: 10px;
+  font-family: 'Arial Rounded', Arial, sans-serif;
+  overflow-x: hidden;
 }
 
+.img-usuario {
+  margin-top: 10%;
+}
+
+header {
+  width: 98%;
+  background-color: #D5E5F7;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  padding: 0.5% 1%;
+}
+
+footer img {
+  width: 15%;
+  height: auto;
+}
+
+#LogoHeader {
+  width: 15%;
+  height: auto;
+}
+
+header button {
+  background: #2E286B;
+  border: none;
+  border-radius: 15px;
+  color: #fff;
+  font-weight: bold;
+  margin: 1% 1%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 70%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  float: right;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 footer {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-top: 1px solid #e9ecef;
+  padding: 1%;
+  background-color: #D5E5F7;
+  overflow: hidden;
+  position: sticky;
+}
+
+footer button {
+  background: #D5E5F7;
+  color: #2C2C2C;
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 1% 1%;
+  margin: 1% 1%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 70%;
+}
+
+.botones-footer {
+  width: 80%;
+}
+
+footer img {
+  width: 30%;
+  height: auto;
+}
+
+.contenido-footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.contenido-footer img {
+  margin-left: 27%;
+  width: 55%;
+}
+
+.logos-footer {
+  display: grid;
+  grid-template-columns: 25% 30% 25%;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.redes_sociales {
+  display: block;
+  margin: 0 auto;
+}
+
+.hamburguesa {
+  display: none;
+}
+
+/* ---------------------------- */
+/* -------   MOBILE   --------- */
+/* ---------------------------- */
+
+@media (width <= 600px) {
+
+  .right 
+  {
+    right: -10% !important; 
+  }
+  .card 
+  {
+    width: 200% !important; 
+    margin-left: 75% !important; 
+  }
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  html {
+    margin-left: -5% !important; 
+    width: 100%;
+    display: block;
+  }
+
+  header {
+    width: 100% !important;
+  }
+
+  /* DESAPARECEN LOS BOTONES NORMALES */
+  .botones-navegacion {
+    display: none !important;
+  }
+
+  /* APARECE LA HAMBURGUESA */
+  .hamburguesa {
+    display: flex !important;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2000;
+    margin-top: 5%;
+  }
+
+  .hamburguesa .linea {
+    width: 28px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 3px;
+  }
+
+  header button {
+    padding: 2% !important;
+    width: 8% !important;
+    font-size: 70% !important;
+    margin-left: 0% !important;
+    margin-right: 10% !important;
+    margin-top: 10% !important; 
+  }
+
+  header img {
+    margin-top: -250% !important;
+    width: 260% !important;
+    height: auto !important;
+    margin-right: 50% !important;
+  }
+
+  #LogoHeader {
+    width: 40%;
+  }
+
+  main h1 {
+    width: 190% !important;
+    padding: 5% !important;
+    font-size: 300% !important;
+    text-align: center !important;
+    margin-left: 22% !important;
+  }
+
+  .h3Landing {
+    width: 250% !important;
+    font-size: 60% !important;
+    text-align: center;
+    margin-left: 35% !important;  
+  }
+.headerLanding img 
+{
+  width: 50% !important;
+  margin-left: 5% !important; 
+  margin-bottom: 5% !important; 
+}
+.headerLanding button 
+{
+  width: 20% !important; 
+  margin-right: 1% !important;
+  font-size: 70% !important; 
+}
+  #Loguito {
+    width: 1000% !important;
+    margin-top: -400% !important;
+    margin-left: -770% !important;
+  }
+  #tukicoin 
+  {
+    width: 9% !important; 
+    margin-top: 13% !important; 
+  }
+  #usuario 
+  {
+    width: 8% !important; 
+    margin-top: 11% !important; 
+    margin-right: 10% !important; 
+  }
+  #tukimonedas, header h3
+  {
+    display: none; 
+  }
+  .titulo-main-section button {
+    padding: 10% !important;
+    width: 110% !important;
+    margin-left: 65%;
+  }
+
+  #LandingPage {
+    margin-top: 180% !important;
+    width: 180% !important;
+    margin-left: -77%;
+  }
+  .main-landing
+  {
+    margin-left: -10% !important; 
+  }
+  .tarjetas {
+    flex-direction: column;
+    margin-left: 40% !important;
+    width: 150% !important;
+    height: 110% !important;
+    margin-top: -5% !important;
+    font-size: 90% !important;  
+    
+  }
+
+  .organizate, .divertite, .motivate {
+    width: 90% !important;
+  }
+
+  .metodoRecomendado {
+    width: 75% !important;
+    margin: 5% auto !important;
+    padding: 5% !important;
+    text-align: center !important;
+    margin-left: 10% !important;
+    margin-top: 20% !important;
+  }
+
+  /* ---------------------- */
+  /* ----- CARRUSEL -------- */
+  /* ---------------------- */
+
+  .carousel-grid {
+    margin-top: 15% !important;
+    gap: 30% !important;   /* REDUCIDO, ya no deja área blanca enorme */
+    margin-left: -5% !important;
+    width: 110% !important; /* área visible más contenida */
+  }
+  .carousel 
+  {
+    margin-left: -13% !important; 
+  }
+.left 
+{
+  left: 5% !important; 
+}
+.right 
+{
+  right: -3% !important; 
+}
+  .carousel-container {
+    margin: 0 !important;
+    margin-left: 20% !important;
+    width: 70% !important;
+    margin-top: -10% !important; 
+  }
+
+  /* ---------------------- */
+  /* ------ FOOTER -------- */
+  /* ---------------------- */
+
+  footer {
+    margin-top: 40% !important;
+    width: 100% !important;
+  }
+
+  .metodosUsados {
+    width: 41% !important;
+    font-size: 75% !important;
+    margin-left: 25% !important;
+    float: left;
+    margin-top: 5% !important;  
+  }
+
+  .headerLanding 
+  {
+    
+  }
 }

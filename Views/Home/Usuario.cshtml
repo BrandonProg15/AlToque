@@ -1,0 +1,193 @@
+@using AlToque.Models
+
+ <header> 
+   @using (Html.BeginForm("Usuario", "Home", FormMethod.Get))
+{
+    <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
+        <img src="~/img/usuario2.png" alt="Usuario" style="width:40px; height:40px;" />  
+    </button>
+}
+ @using (Html.BeginForm("Recompensas", "Home", FormMethod.Get))
+{
+    <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
+        <img src="~/img/tukiCoin.png" alt="Usuario" style="width:50px; height:50px;" /> <h3 style="color:black;">$<span id="tukimonedas">@ViewBag.tukimonedas</span></h3>
+
+    </button>
+}
+   @using (Html.BeginForm("Recompensas", "Home", FormMethod.Get))
+    {
+        <button type="submit">Recompensas</button>
+    }
+
+    @using (Html.BeginForm("Tareas", "Home", FormMethod.Get))
+    {
+        <button type="submit">Tareas</button>
+    }
+
+    @using (Html.BeginForm("Metodos", "Home", FormMethod.Get))
+    {
+        <button type="submit">Métodos</button>
+    }
+
+    @using (Html.BeginForm("Calendario", "Home", FormMethod.Get))
+    {
+        <button type="submit">Calendario</button>
+    }
+ @using (Html.BeginForm("Home", "Home", FormMethod.Get))
+{
+    <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
+        <img src="~/img/Logo.png" alt="logo" style="width:30%; height:auto; margin-right: 150%;" />
+    </button>
+}
+</header>
+
+<main> 
+    <div class="usuario-info">
+        <img src="~/img/usuario2.png" class="usuario-img" />
+        <h1 class="usuario-nombre">Usuario: @ViewBag.usuario</h1>
+    </div>
+
+ <div class = "descripcion"> 
+ <h3> Descripcion del Usuario </h3> 
+         <p> Martina es una estudiante de 40 año que viene metiéndole pila para mejorar su promedio. Le gusta estudiar usando métodos tranquilos como leer y releer, y en su tiempo libre disfruta tejer y mirar pelis con su mamá y su hermana. Es una piba familiera, dedicada, y con ganas de seguir creciendo tanto en el cole como en lo personal.</p> 
+    </div>
+
+   <div class="formulario">
+    <h3>Métodos:</h3>
+    <p>@ViewBag.metodos</p>
+    <h3>Año Escolar:</h3>
+    <p>@ViewBag.anioEscolar</p>
+    <h3>Hobbies:</h3>
+    <p>@ViewBag.hobbies</p>
+    <h3>Objetivos:</h3>
+    <p>@ViewBag.objetivos</p>
+    <button type="submit">Rehacer Form</button>
+</div>
+
+<div class="carousel-grid">
+        <div class="card"><img src="/img/pelicula.jpg" alt="Películas"/><p>Películas</p></div>
+        <div class="card"><img src="/img/flashcards.jpg" alt="Flashcards"/><p>Flashcards</p></div>
+        </div>
+</main>
+
+<footer>
+    <section class="logos-footer">
+      <img src="~/img/logoFooter.png" id="logo1" />
+      <section class="contenido-footer">
+        <div class="botones-footer">
+          <button type="button" class="btn btn-primary">Noticias</button>
+          <button type="button" class="btn btn-secondary">Contactanos</button>
+          <button type="button" class="btn btn-success">Sobre Nosotros</button>
+          <button type="button" class="btn btn-danger">Equipo</button>
+        </div>
+        <div class="redes_sociales">
+          <img src="~/img/redes.png" />
+        </div>
+      </section>
+      <img src="~/img/logoFooter.png" id="logo2" />
+    </section>
+  </footer>
+
+<style>
+.carousel-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    text-align: center;
+    margin-left: 50%;
+    margin-top: -10%;
+}
+
+.card {
+    width: 20%;
+    text-align: center;
+}
+
+.card img {
+    width: 120%;          /* MISMO ancho que la card → texto centrado */
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+
+footer{
+    margin-top: 10%;
+    width: 100%;
+}
+    /* Estilos para el contenedor principal */
+    main {
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .usuario-info {
+        display: flex; /* Para poner la imagen y el nombre del usuario en fila */
+        align-items: center; /* Centra verticalmente los elementos */
+        justify-content: center; /* Centra horizontalmente */
+        margin-bottom: 20px;
+    }
+
+    .usuario-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px; 
+    }
+
+    .usuario-nombre {
+        font-size: 2em;
+        font-weight: bold;
+        color: #333;
+    }
+
+
+    .formulario {
+        background-color: #D5E5F7;
+        width: 35%;
+        padding: 2%;
+        border-radius: 15px;
+        color: #2E286B;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-right: 50%;
+        font-size: 120%;
+        margin-top: -16%;
+    }
+
+    .descripcion {
+        background-color: #D5E5F7;
+        width: 30%;
+        padding: 2%;
+        border-radius: 15px;
+        color: #2E286B;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        font-size: 120%;
+        margin-left: 50%;
+        margin-top: 2%;
+    }
+    .formulario button 
+    {
+        background-color: #2E286B;
+        padding: 3%;
+        color: white; 
+        border: none;  
+        border-radius: 40px; 
+        float: right; 
+        margin-top: 10%; 
+    }
+
+    .formulario h3 {
+        font-size: 1.4em;
+        margin: 10px 0;
+    }
+
+    .formulario h3:first-of-type {
+        margin-top: 0;
+    }
+
+</style>

@@ -1,0 +1,527 @@
+<body>
+ <header>
+  @using (Html.BeginForm("Usuario", "Home", FormMethod.Get))
+    {
+        <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;" id = "usuario">
+            <img src="~/img/usuario2.png" alt="Usuario" style="width:40px; height:40px;" />  
+        </button>
+    }
+
+    @using (Html.BeginForm("Recompensas", "Home", FormMethod.Get))
+    {
+        <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;" id = "tukicoin">
+            <img src="~/img/tukiCoin.png" alt="Usuario" style="width:50px; height:50px;" />
+            <h3 style="color:black;">$<span id="tukimonedas">@ViewBag.tukimonedas</span> </h3>
+        </button>
+    }
+    <div class="botones-navegacion">
+        @using (Html.BeginForm("Recompensas", "Home", FormMethod.Get))
+        {
+            <button type="submit">Recompensas</button>
+        }
+
+        @using (Html.BeginForm("Tareas", "Home", FormMethod.Get))
+        {
+            <button type="submit">Tareas</button>
+        }
+
+        @using (Html.BeginForm("Metodos", "Home", FormMethod.Get))
+        {
+            <button type="submit">Métodos</button>
+        }
+
+        @using (Html.BeginForm("Calendario", "Home", FormMethod.Get))
+        {
+            <button type="submit">Calendario</button>
+        }
+    </div>
+
+    <div id="menuPopup" class="popup-menu">
+        <div class="popup-contenido">
+         <button class="cerrar" onclick="toggleMenu()">X</button>
+<div class = "botonesPopup"> 
+            @using (Html.BeginForm("Recompensas", "Home", FormMethod.Get))
+            {
+                <button type="submit">Recompensas</button>
+            }
+
+            @using (Html.BeginForm("Tareas", "Home", FormMethod.Get))
+            {
+                <button type="submit">Tareas</button>
+            }
+
+            @using (Html.BeginForm("Metodos", "Home", FormMethod.Get))
+            {
+                <button type="submit">Métodos</button>
+            }
+
+            @using (Html.BeginForm("Calendario", "Home", FormMethod.Get))
+            {
+                <button type="submit">Calendario</button>
+            }
+
+        </div>   
+        </div>
+    </div>
+
+
+    @using (Html.BeginForm("Home", "Home", FormMethod.Get))
+    {
+        <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
+          <img src="~/img/Logo.png" alt="logo" style="width:30%; height:auto; margin-left:-90%;" id="Loguito" />
+        </button>
+    }
+ <div class="hamburguesa" onclick="toggleMenu()">
+        <div class="linea"></div>
+        <div class="linea"></div>
+        <div class="linea"></div>
+    </div>
+
+</header>
+
+
+  <main>
+   <img src="~/img/rehacer.png" alt="logo" id = "Rehacer" />
+    <div class="metodoRecomendado">
+      <h3>Método recomendado</h3>
+    </div> 
+   
+<div class = "carousel"> 
+ <div class="metodosUsados">
+      <h3>Métodos que usaste</h3>
+    </div>
+
+
+    <div class="carousel-container">
+   
+      <button class="arrow left">❮</button>
+
+
+      <div class="carousel-grid">
+        <div class="card abrirPeliculas">
+   <img src="/img/pelicula.jpg" alt="Películas"/>
+   <p>Películas</p>
+</div>
+
+        <div class="card"><img src="/img/flashcards.jpg" alt="Flashcards"/><p>Flashcards</p></div>
+        <div class="card"><img src="/img/cornell.jpg" alt="Cornell"/><p>Cornell</p></div>
+        <div class="card"><img src="/img/feynman.png" alt="Feynman"/><p>Feynman</p></div>
+        <div class="card"><img src="/img/pregunta.png" alt="Otro"/><p>???</p></div>
+      </div>
+
+
+      <button class="arrow right">❯</button>
+    </div>
+    <div class="metodosUsados">
+      <h3>Otros métodos recomendados</h3>
+    </div>
+    <div class="carousel-container">
+      <button class="arrow left">❮</button>
+
+
+       <div class="carousel-grid">
+        <div class="card"><img src="/img/pelicula.jpg" alt="Películas"/><p>Películas</p></div>
+        <div class="card"><img src="/img/flashcards.jpg" alt="Flashcards"/><p>Flashcards</p></div>
+        <div class="card"><img src="/img/cornell.jpg" alt="Cornell"/><p>Cornell</p></div>
+        <div class="card"><img src="/img/feynman.png" alt="Feynman"/><p>Feynman</p></div>
+        <div class="card"><img src="/img/pregunta.png" alt="Otro"/><p>???</p></div>
+        <div class="card"><img src="/img/pregunta.png" alt="Otro"/><p>???</p></div>
+        <div class="card"><img src="/img/pregunta.png" alt="Otro"/><p>???</p></div>
+
+        
+      </div>
+
+      <button class="arrow right">❯</button>
+    </div>
+    </div>
+    <!-- POPUP PARA PELÍCULAS -->
+<div id="popupPeliculas" class="popup-peliculas">
+  <div class="popup-peliculas-contenido">
+    
+    <span class="cerrar-popup" id="cerrarPeliculas">&times;</span>
+
+    <h2>Películas</h2>
+
+    <img src="/img/pelicula.jpg" alt="Películas" style="width:45%; border-radius:15px; margin-top:10px;">
+
+    <p style="margin-top:20px; font-size:18px; line-height:1.5;">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus
+      nibh vel lacus luctus, quis ornare tortor tristique.
+    </p>
+
+  </div>
+</div>
+
+  </main>
+
+
+  <footer>
+    <section class="logos-footer">
+      <img src="~/img/logoFooter.png" id="logo1" />
+      <section class="contenido-footer">
+        <div class="botones-footer">
+          <button type="button" class="btn btn-primary">Noticias</button>
+          <button type="button" class="btn btn-secondary">Contactanos</button>
+          <button type="button" class="btn btn-success">Sobre Nosotros</button>
+          <button type="button" class="btn btn-danger">Equipo</button>
+        </div>
+        <div class="redes_sociales">
+          <img src="~/img/redes.png" />
+        </div>
+      </section>
+      <img src="~/img/logoFooter.png" id="logo2" />
+    </section>
+  </footer>
+
+
+<style>
+#usuario
+{
+  margin-right: 2%; 
+}
+.botonesPopup 
+{
+  margin-left: 5%; 
+}
+   .metodoRecomendado{
+      background-color: #DFFBFB;
+      border: solid 3px #75BBEE;
+      border-radius: 20px;
+      padding: 1.2%;
+      width: 50%;
+      text-align: center;
+      margin-left: 25%;
+      margin-top: -6%;
+    }
+
+  #Rehacer {
+    width: 1%; 
+    margin-top: 15%; 
+    margin-left: 78%; 
+  }
+
+    header {
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      padding: 10px;
+    }
+
+    .carousel-container {
+      width: 65%;
+      margin: 5% auto;
+      display: flex;
+      align-items: center;
+      margin-top: 2%;
+    }
+
+    .carousel-grid {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(20%, 5%);
+      gap: 3%;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none; 
+    }
+
+    .card {
+      background: #f8f8f8;
+      border-radius: 15px;
+      text-align: center; 
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      height: 76%;
+      display: block;
+      border-radius: 15px;
+    }
+
+    .arrow {
+      background: #75BBEE ;
+      border: none;
+      font-size: 120%;
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 50px;
+      transition: 0.2s;
+      z-index: 5;
+    }
+
+    .arrow:hover {
+      background: rgba(255,255,255,1);
+    }
+
+    .left {
+      position: absolute; 
+      left: 14%;
+    }
+
+    .right {
+      position: absolute; 
+      right: 14%;
+    }
+
+    .metodosUsados {
+      background-color: #75BBEE;
+      border: solid 3px #75BBEE;
+      border-radius: 20px;
+      padding: 0.01%;
+      width: 20%;
+      text-align: center;
+      margin-left: 17%;
+      margin-top: 2%;
+      font-size: 120%;
+    }
+
+    footer {
+      margin-top: 10%;
+    }
+
+.popup-menu {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(7, 22, 35, 0.45);
+  backdrop-filter: blur(8px) saturate(1.05);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease-in-out;
+}
+
+.popup-menu.activo {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Contenedor principal: tarjeta flotante tipo "card" */
+.popup-contenido {
+  width: 86%;
+  background-color: #D5E5F7; 
+  border-radius: 20px;
+  padding: 18px;
+  border: 1px solid rgba(125,185,238,0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+/* animación al abrir */
+.popup-menu.activo .popup-contenido {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Botones principales: estilo moderno con iconito a la izquierda */
+.popup-contenido button {
+  display: flex;
+  align-items: center;
+  width: 85% !important;
+  padding: 5% !important; 
+  border-radius: 12px;
+  border: none;
+  color: #fff;
+  font-size: 100% !important;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(18,80,140,0.12);
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+
+
+/* estilo del icono */
+.popup-contenido button::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.12);
+  font-size: 18px;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(9,60,110,0.06) inset;
+}
+
+/* hover / active */
+.popup-contenido button:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.03);
+  box-shadow: 0 14px 30px rgba(20,80,140,0.12);
+}
+.popup-contenido button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(20,80,140,0.08);
+}
+
+/* Botón "Cerrar" con estilo secundario (aparece como último botón) */
+.popup-contenido .cerrar {
+  background-color: #d11a2a !important; 
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(255,92,92,0.12);
+  width: 10% !important; 
+  margin-left: 93% !important;
+  margin-top: -10% !important;
+  font-size: 100% !important; ; 
+  padding: 2% !important; 
+}
+
+/* foco accesible */
+.popup-contenido button:focus {
+  outline: 3px solid rgba(117,187,238,0.22);
+  outline-offset: 3px;
+}
+
+/* separación visual sutil arriba y abajo */
+.popup-contenido::before {
+  content: "";
+  height: 6px;
+  width: 56px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02));
+  border-radius: 999px;
+  display: block;
+  margin: 6px auto 8px auto;
+  opacity: 0.5;
+}
+
+/* POPUP PELÍCULAS */
+.popup-peliculas {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+}
+
+.popup-peliculas.activo {
+  display: flex;
+}
+
+.popup-peliculas-contenido {
+  background: #D5E5F7;
+  width: 55%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.25);
+}
+
+.cerrar-popup {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 32px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #d11a2a; 
+  width: 5%; 
+  border-radius: 10px; 
+  color: white; 
+}
+
+</style>
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ===========================
+     CAROUSEL (el de siempre)
+  ============================ */
+  const carousels = document.querySelectorAll('.carousel-container');
+
+  carousels.forEach(container => {
+    const carousel = container.querySelector('.carousel-grid');
+    const btnLeft = container.querySelector('.arrow.left');
+    const btnRight = container.querySelector('.arrow.right');
+
+    btnLeft.addEventListener('click', () => {
+      carousel.scrollBy({ left: -250, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+      carousel.scrollBy({ left: 250, behavior: 'smooth' });
+    });
+  });
+
+  /* ===========================
+     POPUP DEL MENÚ HAMBURGUESA
+  ============================ */
+  const menu = document.getElementById('menuPopup');
+  const ham = document.querySelector('.hamburguesa');
+  const cerrarBtns = menu ? menu.querySelectorAll('.cerrar') : [];
+
+  function toggleMenu() {
+    const activo = menu.classList.toggle('activo');
+    document.body.style.overflow = activo ? 'hidden' : '';
+  }
+
+  if (ham) {
+    ham.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+  }
+
+  menu.addEventListener('click', (e) => {
+    if (e.target === menu) toggleMenu();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu.classList.contains('activo')) toggleMenu();
+  });
+
+  cerrarBtns.forEach(b => b.addEventListener('click', (ev) => {
+    ev.preventDefault();
+    toggleMenu();
+  }));
+
+  menu.classList.remove('activo');
+  document.body.style.overflow = '';
+
+  /* ===========================
+     POPUP DE PELÍCULAS
+  ============================ */
+  const abrirPeliculas = document.querySelector(".abrirPeliculas");
+  const popupPeliculas = document.getElementById("popupPeliculas");
+  const cerrarPeliculas = document.getElementById("cerrarPeliculas");
+
+  if (abrirPeliculas && popupPeliculas && cerrarPeliculas) {
+
+    abrirPeliculas.addEventListener("click", () => {
+      popupPeliculas.classList.add("activo");
+      document.body.style.overflow = "hidden";
+    });
+
+    cerrarPeliculas.addEventListener("click", () => {
+      popupPeliculas.classList.remove("activo");
+      document.body.style.overflow = "";
+    });
+
+    popupPeliculas.addEventListener("click", (e) => {
+      if (e.target === popupPeliculas) {
+        popupPeliculas.classList.remove("activo");
+        document.body.style.overflow = "";
+      }
+    });
+
+  } else {
+    console.warn("Falta algún elemento del popup de películas");
+  }
+
+});
+</script>
+
+
+</body>
+
+

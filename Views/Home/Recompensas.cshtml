@@ -1,0 +1,339 @@
+@using AlToque.Models
+@model Tuple<List<Recompensa>, List<int>>
+
+@{
+    ViewData["Title"] = "Recompensas";
+    var recompensas = Model.Item1;
+    var recompensasCompradas = Model.Item2;
+    var tukimonedas = ViewBag.tukimonedas;
+}
+
+ <header> 
+   @using (Html.BeginForm("Usuario", "Home", FormMethod.Get))
+{
+    <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
+        <img src="~/img/usuario2.png" alt="Usuario" style="width:40px; height:40px;" />  
+    </button>
+}
+ @using (Html.BeginForm("Recompensas", "Home", FormMethod.Get))
+{
+    <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
+        <img src="~/img/tukiCoin.png" alt="Usuario" style="width:50px; height:50px;" /> <h3 style="color:black;">$<span id="tukimonedas">@ViewBag.tukimonedas</span></h3>
+
+    </button>
+}
+   @using (Html.BeginForm("Recompensas", "Home", FormMethod.Get))
+    {
+        <button type="submit">Recompensas</button>
+    }
+
+    @using (Html.BeginForm("Tareas", "Home", FormMethod.Get))
+    {
+        <button type="submit">Tareas</button>
+    }
+
+    @using (Html.BeginForm("Metodos", "Home", FormMethod.Get))
+    {
+        <button type="submit">Métodos</button>
+    }
+
+    @using (Html.BeginForm("Calendario", "Home", FormMethod.Get))
+    {
+        <button type="submit">Calendario</button>
+    }
+ @using (Html.BeginForm("Home", "Home", FormMethod.Get))
+{
+    <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
+        <img src="~/img/Logo.png" alt="logo" style="width:30%; height:auto; margin-left: -90%;" />
+    </button>
+}
+</header>
+
+<main>
+<section class="recompensas-container">
+    <div class="menu">
+        <h2 class="titulo">Recompensas</h2>
+        <!-- <div class="opciones">
+            <p class="opcion">Vestir a Tuki</p>
+            <p class="opcion">Cambiar diseño</p>
+            <p class="opcion">Medallas</p>
+            <p class="opcion">Historia de Tuki</p> 
+        </div> -->
+        <img src="~/img/menu-recompensas.png" class="imagen-menu" alt="menu" >
+    </div>
+    <div class="recompensa-actual">
+        <!-- Imagen principal de Tuki -->
+        <div class="imagen-tuki">
+            <img id="imagenTuki" src="~/img/Tuki.jpg" alt="Tuki" />
+        </div>
+
+        <div class="lista-recompensas">
+            @foreach (var recompensa in recompensas)
+            {
+                bool tiene = recompensasCompradas.Contains(recompensa.idRecompensa);
+
+                <div class="recompensa-card">
+                    <img src="~/img/@(recompensa.nombre.ToLower()).png" alt="@recompensa.nombre" />
+                    <p class="costo">Costo: @recompensa.costo Tukimonedas</p>
+
+                    <button 
+                    class="btn-comprar"
+                    data-idrecompensa="@recompensa.idRecompensa"
+                        data-nombrerecompensa="@recompensa.nombre.ToLower()"
+                        @(tiene ? "" : "")>
+                        @(tiene ? "Usar" : "Comprar")
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+    </section>
+</main>
+  <footer>
+        <section class="logos-footer">
+      <img src = "~/img/logoFooter.png" id= logo1/>
+      <section class="contenido-footer">
+      <div class="botones-footer">
+      <button type="button" class="btn btn-primary">Noticias</button>
+      <button type="button" class="btn btn-secondary">Contactanos</button>
+      <button type="button" class="btn btn-success">Sobre Nosotros</button>
+      <button type="button" class="btn btn-danger">Equipo</button>
+      </div>
+      <div class="redes_sociales">
+         <img src = "~/img/redes.png"/>
+      </div>
+      </section>
+       <img src = "~/img/logoFooter.png" id= logo2/>
+             </section>
+
+    </footer>
+
+
+@section Scripts {
+<script>
+    const mapaTukis = {
+        "gorrobruja": "TukiBruja.png",
+        "gorrobufon": "TukiBufon.png",
+        "gorropirata": "TukiPirata.png",
+        "gorroprincesa": "TukiPrincesa.png",
+        "gorrorey": "TukiRey.png",
+        "gorrovaquero": "TukiVaquero.png"
+    };
+
+    document.querySelectorAll(".btn-comprar").forEach(btn => {
+        btn.addEventListener("click", async e => {
+            e.preventDefault();
+
+            const idRecompensa = btn.dataset.idrecompensa;
+            const nombreRecompensa = btn.dataset.nombrerecompensa;
+            const token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
+
+            // Si la recompensa ya está comprada, solo cambia el look
+            if (btn.innerText === "Usar" || btn.innerText === "Usando ✅") {
+                cambiarTuki(nombreRecompensa, btn);
+                return;
+            }
+
+            // Caso contrario, la compra
+            const res = await fetch("@Url.Action("RestarTuks", "Home")", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "RequestVerificationToken": token
+                },
+                body: `idRecompensa=${idRecompensa}`
+            });
+
+            const data = await res.json();
+            alert(data.message);
+
+            if (data.success) {
+                document.getElementById("tukimonedas").innerText = data.tukimonedas;
+                btn.innerText = "Usar";
+                cambiarTuki(nombreRecompensa, btn);
+            }
+        });
+    });
+
+    function cambiarTuki(nombreRecompensa, botonSeleccionado) {
+        const nuevaImagen = mapaTukis[nombreRecompensa] || "Tuki.jpg";
+        document.getElementById("imagenTuki").src = `/img/${nuevaImagen}`;
+
+        // Actualiza el estado de los botones
+        document.querySelectorAll(".btn-comprar").forEach(b => {
+            if (b.innerText === "Usando ✅") b.innerText = "Usar";
+        });
+
+        botonSeleccionado.innerText = "Usando ✅";
+    }
+</script>
+
+<style>
+    .recompensas-container {
+        text-align: center;
+        padding: 3%;
+        gap:4%;
+        display:grid;
+        grid-template-columns:25% 75%;
+        align-items: start;
+        color: #2E286B;
+
+    }
+    .recompensa-actual{
+        display: grid;
+        grid-template-columns: 30% 65%;
+        background-color: #D5E5F7;
+        width: 90%;
+        height:100%;
+        border-radius: 15px;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .saldo {
+        margin-bottom: 3%;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .menu{
+        height:85%;
+        width:95;
+    }
+
+    .imagen-menu{
+        width:95%;
+        height:95%;
+    }
+
+    .titulo{
+        text-align: left;
+        color: #2E286B;
+        margin-bottom: 9%;
+        font: bold;
+        font-size: 45px;
+        margin-top: 1%;
+    }
+
+    .opciones{
+        background-color:#D5E5F7;
+        height:85%;
+        width:95;
+        border-radius:15px;
+        margin:2%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 2%;
+        justify-content: center;
+    }
+
+    .opcion{
+        text-align:left;
+    }
+
+    .imagen-tuki img {
+        width: 98%;
+        margin-bottom: 25px;
+    }
+
+    .lista-recompensas {
+        display: grid;
+        padding: 3%;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 6%;
+        justify-content: center;
+        height: 85%;
+    }
+
+    .recompensa-card {
+        border: 1px solid #D5E5F7;
+        border-radius: 20px;
+        padding: 2%;
+        box-shadow: 0 2px 10px rgba(46, 40, 107, 0.1);
+        height: 95%;
+        width: 80%;
+        background-color: #0098D1;
+    }
+    .costo{
+        margin-top:5px;
+        margin-bottom:5px;
+    }
+    .recompensa-card img {
+        width: 60%;
+        border-radius: 10px;
+    }
+
+    .btn-comprar {
+        padding: 8px 15px;
+        border: none;
+        border-radius: 10px;
+        background-color: #2114a5;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-comprar:hover {
+        background-color: #2E286B;
+    }
+
+    .btn-comprar:disabled {
+        background-color: #777;
+        cursor: not-allowed;
+    }
+
+    @@media (width <= 600px){
+        .recompensas-container{
+            grid-template-columns: none;
+            grid-template-rows: 40% 60%;
+            gap: 2%;
+        }
+
+        .menu {
+            height: 100%;
+        }
+
+        .titulo {
+            text-align: center;
+        }
+        .imagen-menu {
+            width: 90%;
+            height: 77%;
+        }
+
+        .recompensa-actual{
+            grid-template-columns: none;
+            grid-template-rows: 37% 59%;
+            width: 100%;
+            height: 95%;
+            gap: 2%;
+        }
+        .imagen-tuki{
+            height: 100%;
+        }
+        .imagen-tuki img{
+            width: 72%;
+            margin-bottom: 32px;
+        }
+
+        .lista-recompensas{
+            gap: 4%;
+            justify-content: center;
+            height: 67%;
+            justify-items: center;
+            align-content: center;
+            align-items: center;
+            grid-template-rows: auto;
+        }
+        .recompensa-card{
+            height: 100%;;
+            width: 98%;
+        }
+    }
+</style>
+}

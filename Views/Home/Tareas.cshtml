@@ -1,0 +1,671 @@
+@using AlToque.Models
+
+<header>
+    @using (Html.BeginForm("Usuario", "Home", FormMethod.Get))
+    {
+        <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
+            <img src="~/img/usuario2.png" alt="Usuario" style="width:40px; height:40px;" />
+        </button>
+    }
+
+    @using (Html.BeginForm("Recompensas", "Home", FormMethod.Get))
+    {
+        <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
+            <img src="~/img/tukiCoin.png" alt="Usuario" style="width:50px; height:50px;" />
+            <h3 style="color:black;">$<span id="tukimonedas">@ViewBag.tukimonedas</span></h3>
+        </button>
+    }
+
+    @using (Html.BeginForm("Recompensas", "Home", FormMethod.Get))
+    { <button type="submit">Recompensas</button> }
+
+    @using (Html.BeginForm("Tareas", "Home", FormMethod.Get))
+    { <button type="submit">Tareas</button> }
+
+    @using (Html.BeginForm("Metodos", "Home", FormMethod.Get))
+    { <button type="submit">Métodos</button> }
+
+    @using (Html.BeginForm("Calendario", "Home", FormMethod.Get))
+    { <button type="submit">Calendario</button> }
+
+    @using (Html.BeginForm("Home", "Home", FormMethod.Get))
+    {
+        <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
+            <img src="~/img/Logo.png" alt="logo" style="width:30%; height:auto; margin-left:-90%;" />
+        </button>
+    }
+</header>
+
+
+<main>
+    <section class="contenedor-tareas">
+        <div class="tareas-header">
+            <h2 class="titulo-tareas">Tareas</h2>
+            <button id="btnAgregarTarea" class="boton-mas">+</button>
+        </div>
+
+        <section class="section-grid">
+            <div class="lista-tareas">
+                <div class="listaTareas-Header">
+                    <h2>listaaa</h2>
+                </div>
+
+               <div class="tareas">
+    @foreach (var tarea in ViewBag.tareas)
+    {
+        <div class="tarea-item">
+
+            <!-- BOTÓN PARA VER TAREA -->
+            <button class="boton-tarea"
+                    data-titulo="@tarea.titulo"
+                    data-descripcion="@tarea.descripcion"
+                    data-fechainicio="@tarea.fechaInicio.ToString("yyyy-MM-dd")"
+                    data-fechafin="@tarea.fechaFin.ToString("yyyy-MM-dd")">
+                @tarea.titulo
+            </button>
+
+            <!-- BOTÓN EDITAR -->
+            <button type="button" class = "editar"
+                    onclick="abrirPopupEditar(
+                        '@tarea.titulo',
+                        '@tarea.descripcion',
+                        '@tarea.fechaInicio.ToString("yyyy-MM-ddTHH:mm")',
+                        '@tarea.fechaFin.ToString("yyyy-MM-ddTHH:mm")'
+                    )"
+                    >
+                <img src="~/img/lapiz.png" width="20" height="20" >
+            </button>
+
+            <!-- BOTÓN ELIMINAR -->
+            <button type="button" class="BotonEliminar" data-titulo="@tarea.titulo">
+                <img src="~/img/basura.png" alt="Eliminar" width="24" height="24" />
+            </button>
+
+        </div>
+    }
+</div>
+            </div>
+
+            <div class="div-popups">
+
+                <div id="popupInicio" class="popup-derecha mostrar">
+                    <div class="popup-contenido">
+                        <div class="popup-header"><h3>¿Qué tarea vas a hacer hoy?</h3></div>
+                        <div class="popup-body">
+                            <p style="text-align:center; color:#1c1b70; font-weight:600;">
+                                Elegí una tarea de la lista o creá una nueva con el botón (+)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="popupTarea" class="popup-derecha">
+                    <div class="popup-contenido">
+                        <div class="popup-header">
+                            <h3 id="popupTitulo">Nueva Tarea</h3>
+                            <span id="cerrarPopup" class="cerrar">&times;</span>
+                        </div>
+
+                        <div class="popup-body">
+                            <form id="formTarea" method="post">
+                                <input type="hidden" id="tituloViejo" name="tituloViejo" />
+
+                                <div class="campo">
+                                    <label>Título</label>
+                                    <input type="text" id="inputTitulo" name="titulo" required />
+                                </div>
+
+                                <div class="campo">
+                                    <label>Descripción</label>
+                                    <textarea id="inputDescripcion" name="descripcion"></textarea>
+                                </div>
+
+                                <div class="fechas">
+                                    <div>
+                                        <label>Fecha de inicio</label>
+                                        <input type="date" id="inputFechaInicio" name="fechaInicio" required />
+                                    </div>
+
+                                    <div>
+                                        <label>Fecha de fin</label>
+                                        <input type="date" id="inputFechaFin" name="fechaFin" required />
+                                    </div>
+                                </div>
+
+                                <button type="submit" id="btnGuardar" class="boton-guardar">Guardar tarea</button>
+                            </form>
+
+                            @using (Html.BeginForm("Metodos", "Home", FormMethod.Get))
+                            { <button type="submit" class="boton-metodos">Métodos Recomendados</button> }
+
+                            @using (Html.BeginForm("Recompensas", "Home", FormMethod.Get))
+                            { <button type="submit" class="boton-completar">Completar Tarea (+100 tukicoins)</button> }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+    <div id="popupEditar" class="popup-editar">
+    <div class="popup-contenido2">
+        <span class="cerrar" onclick="cerrarPopupEditar()">&times;</span>
+
+        @using (Html.BeginForm("EditarTarea", "Home", FormMethod.Post, new { id = "editor" }))
+        {
+            <input type="hidden" id="tituloViejoEditar" name="tituloViejo">
+
+            <label>Título</label>
+            <textarea id="tituloEditar" name="titulo" required></textarea>
+
+            <label>Descripción</label>
+            <textarea id="descripcionEditar" name="descripcion" required></textarea>
+
+            <label>Fecha inicio</label>
+            <input type="datetime-local" id="fechaInicioEditar" name="fechaInicio" required>
+
+            <label>Fecha fin</label>
+            <input type="datetime-local" id="fechaFinEditar" name="fechaFin" required>
+
+            <button type="submit" class="btn-confirmar">Guardar cambios</button>
+        }
+    </div>
+</div>
+
+</main>
+
+
+<div id="overlay" class="overlay"></div>
+
+<div id="popupConfirmacion" class="popup-confirmacion">
+    <div class="popup-contenido-confirmacion">
+        <h3>¿Eliminar esta tarea?</h3>
+        <p id="nombreTareaEliminar"></p>
+
+        @using (Html.BeginForm("EliminarTarea", "Home", FormMethod.Post, new { id = "formEliminarTarea" }))
+        {
+            <input type="hidden" id="tituloEliminar" name="titulo" />
+
+            <div class="botones-confirmacion">
+                <button type="submit" class="boton-confirmar">Sí, eliminar</button>
+                <button type="button" id="cancelarEliminar" class="boton-cancelar">Cancelar</button>
+            </div>
+        }
+    </div>
+</div>
+
+
+<script>
+const popupInicio = document.getElementById('popupInicio');
+const popup = document.getElementById('popupTarea');
+const btnAbrir = document.getElementById('btnAgregarTarea');
+const btnCerrar = document.getElementById('cerrarPopup');
+const popupTitulo = document.getElementById('popupTitulo');
+const inputTitulo = document.getElementById('inputTitulo');
+const inputDescripcion = document.getElementById('inputDescripcion');
+const inputFechaInicio = document.getElementById('inputFechaInicio');
+const inputFechaFin = document.getElementById('inputFechaFin');
+const btnGuardar = document.getElementById('btnGuardar');
+const overlay = document.getElementById('overlay');
+const popupConfirmacion = document.getElementById('popupConfirmacion');
+const nombreTareaEliminar = document.getElementById('nombreTareaEliminar');
+const tituloEliminar = document.getElementById('tituloEliminar');
+const cancelarEliminar = document.getElementById('cancelarEliminar');
+
+function setReadOnly(isReadOnly) {
+    inputTitulo.readOnly = isReadOnly;
+    inputDescripcion.readOnly = isReadOnly;
+    inputFechaInicio.disabled = isReadOnly;
+    inputFechaFin.disabled = isReadOnly;
+    btnGuardar.style.display = isReadOnly ? "none" : "block";
+}
+
+btnAbrir.onclick = () => {
+    popupInicio.classList.remove('mostrar');
+    popupTitulo.textContent = "Nueva Tarea";
+    inputTitulo.value = "";
+    inputDescripcion.value = "";
+    inputFechaInicio.value = "";
+    inputFechaFin.value = "";
+    setReadOnly(false);
+    popup.classList.add('mostrar');
+};
+
+btnCerrar.onclick = () => {
+    popup.classList.remove('mostrar');
+    popupInicio.classList.add('mostrar');
+};
+
+document.querySelectorAll('.boton-tarea').forEach(boton => {
+    boton.addEventListener('click', () => {
+        popupInicio.classList.remove('mostrar');
+
+        const titulo = boton.dataset.titulo;
+        const descripcion = boton.dataset.descripcion;
+        const fechaInicio = boton.dataset.fechainicio || "";
+        const fechaFin = boton.dataset.fechafin || "";
+
+        popupTitulo.textContent = "Detalles de la Tarea";
+        inputTitulo.value = titulo;
+        inputDescripcion.value = descripcion;
+        inputFechaInicio.value = fechaInicio;
+        inputFechaFin.value = fechaFin;
+
+        setReadOnly(true);
+        popup.classList.add('mostrar');
+    });
+});
+
+document.querySelectorAll('.BotonEliminar').forEach(boton => {
+    boton.addEventListener('click', () => {
+        const titulo = boton.dataset.titulo;
+
+        nombreTareaEliminar.textContent = titulo;
+        tituloEliminar.value = titulo;
+
+        overlay.classList.add('mostrar');
+        popupConfirmacion.classList.add('mostrar');
+    });
+});
+
+cancelarEliminar.onclick = cerrarPopupConfirmacion;
+
+function cerrarPopupConfirmacion() {
+    overlay.classList.remove('mostrar');
+    popupConfirmacion.classList.remove('mostrar');
+}
+
+function abrirPopupEditar(titulo, descripcion, fechaI, fechaF) {
+    document.getElementById("popupEditar").style.display = "flex";
+    overlay.classList.add('mostrar');  // <<< NUEVO
+
+    document.querySelectorAll('input[name="tituloViejo"]').forEach(i => i.value = titulo);
+    document.getElementById("tituloViejoEditar").value = titulo;
+
+    document.getElementById("tituloEditar").value = titulo;
+    document.getElementById("descripcionEditar").value = descripcion;
+    document.getElementById("fechaInicioEditar").value = fechaI;
+    document.getElementById("fechaFinEditar").value = fechaF;
+}
+
+
+function cerrarPopupEditar() {
+    document.getElementById("popupEditar").style.display = "none";
+    overlay.classList.remove('mostrar'); // <<< NUEVO
+}
+
+</script>
+
+
+<footer>
+    <section class="logos-footer">
+        <img src="~/img/logoFooter.png" id="logo1" />
+
+        <section class="contenido-footer">
+            <div class="botones-footer">
+                <button type="button" class="btn btn-primary">Noticias</button>
+                <button type="button" class="btn btn-secondary">Contactanos</button>
+                <button type="button" class="btn btn-success">Sobre Nosotros</button>
+                <button type="button" class="btn btn-danger">Equipo</button>
+            </div>
+
+            <div class="redes_sociales">
+                <img src="~/img/redes.png" />
+            </div>
+        </section>
+
+        <img src="~/img/logoFooter.png" id="logo2" />
+    </section>
+</footer>
+
+<style>
+.popup-contenido2 button 
+{
+    background: #2E286B;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    font-weight: bold;
+    margin: 1% 1%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    font-size: 70%;
+    padding: 4%; 
+    float: left; 
+    margin-top: 12%; 
+ 
+}
+#editor 
+{
+    padding: 10%; 
+}
+.popup-contenido2
+{
+    background-color: #D5E5F7;
+    width: 25%;
+    border-radius: 20px;  
+}
+.popup-ver-tarea {
+    position: fixed;
+    z-index: 900; /* queda atrás del overlay */
+}
+
+.overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;  /* tapa el popup de ver */
+    display: none; /* o como lo manejes */
+}
+.editar
+{
+    background-color: transparent; 
+    border: none; 
+    float: right; 
+}
+
+.popup-editar-tarea {
+    position: fixed;
+    z-index: 2000; /* siempre adelante del overlay */
+}
+
+.contenedor-tareas
+{
+margin-left: 5%;
+}
+.BotonEliminar {
+    background-color: transparent;
+    border-color: transparent;
+    float: right;
+}
+
+.tareas {
+    background-color: #D5E5F7;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 60.2%;
+    border-radius: 0 0 20px 20px;
+}
+
+.listaTareas-Header {
+    width: 60%;
+    padding: 0.1%;
+    border-radius: 20px 20px 0 0;
+    background-color: #0098D1;
+    text-align: center;
+}
+
+.lista-tareas {
+    margin-left: 10%;
+}
+
+.titulo-tareas {
+    margin-right: 25%;
+}
+
+.boton-tarea {
+    background-color: #D5E5F7;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: left;
+}
+
+.boton-tarea:hover {
+    background-color: #2e2c94;
+    transform: scale(1.03);
+}
+
+.tareas-header {
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    width: 90%;
+    margin: 0 auto 15px auto;
+    margin-left: 5%;
+}
+
+.boton-mas {
+    background-color: #2E286B;
+    color: #fff;
+    font-size: 1.8rem;
+    border: none;
+    border-radius: 15px;
+    width: 2.5%;
+    height: 5%;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    transition: 0.25s;
+    margin-top: 1.5%;
+    margin-left: -2%;
+}
+
+.boton-mas:hover {
+    background-color: #2e2c94;
+    transform: scale(1.1);
+}
+
+.popup-derecha {
+    position: fixed;
+    right: -35%;
+    width: 30%;
+    height: 60%;
+    background-color: #f3f7ff;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.25);
+    transition: right 0.4s ease;
+    z-index: 999;
+    border-radius: 12px;
+    margin-top: -3%;
+}
+
+.popup-derecha.mostrar {
+    right: 10%;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0098D1;
+    padding: 10px 16px;
+    border-radius: 12px 12px 0 0;
+    color: #0e0e4b;
+}
+
+.popup-header h3 {
+    margin: 0;
+    font-weight: 700;
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+footer {
+    margin-top: 10%;
+}
+
+.cerrar {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #0e0e4b;
+    transition: 0.3s;
+    margin-right: 3%; 
+}
+
+.cerrar:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+.popup-body {
+    background-color: #dfe9ff;
+    border-radius: 0 0 12px 12px;
+    padding: 8%;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    color: #1c1b70;
+    margin-bottom: 5px;
+}
+.div-popups 
+{
+    width: 30%; 
+}
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 95%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    outline: none;
+     min-height: 30px;
+    resize: vertical;
+}
+.popup-contenido2 textarea{
+    width: 80%;
+    min-height: 50%; 
+
+}
+.fechas {
+    display: flex;
+    gap: 10%;
+    justify-content: space-evenly; 
+}
+
+.boton-guardar,
+.boton-metodos,
+.boton-completar {
+    width: 99%;
+    background-color: #2e2c94;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.boton-guardar:hover,
+.boton-metodos:hover {
+    background-color: #1f1d7c;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+
+.overlay.mostrar {
+    display: block;
+}
+
+.popup-confirmacion {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: none;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.popup-confirmacion.mostrar {
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.botones-confirmacion {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.boton-confirmar {
+    background-color: #d11a2a;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.boton-cancelar {
+    background-color: #777;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.boton-confirmar:hover {
+    background-color: #a00;
+}
+
+.boton-cancelar:hover {
+    background-color: #555;
+}
+.popup-editar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2001; 
+}
+
+
+.popup-contenido {
+    padding: 3%;
+    width: 95%;
+    border-radius: 10px;
+}
+
+.cerrar {
+    float: right;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+</style>

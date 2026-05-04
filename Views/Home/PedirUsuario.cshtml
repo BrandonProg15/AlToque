@@ -1,6 +1,191 @@
-<form action= '@Url.Action("CrearUsuario", "Home")' method = "POST" enctype = "multipart/form-data"> 
-  Usuario: <input type = "text" name="nombre" required/>
-  contraseña: <input type = "password" name="contrasenia" required/>
-  <input type="submit" name="Enviar"/>
-</form>
+<header>
+  <img src="~/img/Logo.png" id="LogoHeader" />
+</header>
 
+<main class="main-subscripcion">
+  <div class="subscription-form">
+    <form id="formRegistro" action='@Url.Action("CrearUsuario", "Home")' method="POST" enctype="multipart/form-data">
+      <h1>Crear Cuenta</h1>
+
+      <div class="social-buttons">
+        <a href="#" title="Registrarse con Google">
+          <img src="~/img/Google__G__logo.svg.png" id="Google" />
+        </a>
+        <a href="#" title="Registrarse con Facebook">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook">
+        </a>
+        <a href="#" title="Registrarse con X (Twitter)">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="Twitter">
+        </a>
+      </div>
+
+      <div class="form-group">
+        Mail: <br><input type="text" name="mail" required />
+      </div>
+
+      <div class="form-group">
+        Contraseña: <input type="password" name="contrasenia" required />
+      </div>
+
+      <div class="check">
+        <input type="checkbox" id="chkTerminos"> Acepto los Términos y Condiciones<br>
+      </div>
+
+      <div class="check">
+        <input type="checkbox"> Acepto recibir notificaciones
+      </div>
+
+      <p id="mensajeError" class="error oculto">⚠️ Debes aceptar los términos y condiciones.</p>
+
+      <input class="submit-btn" type="submit" name="Registrarse" value="Registrarse" />
+    </form>
+  </div>
+</main>
+
+<footer>
+  <section class="logos-footer">
+    <img src="~/img/logoFooter.png" id="logo1" />
+    <section class="contenido-footer">
+      <div class="botones-footer">
+        <button type="button" class="btn btn-primary">Noticias</button>
+        <button type="button" class="btn btn-secondary">Contactanos</button>
+        <button type="button" class="btn btn-success">Sobre Nosotros</button>
+        <button type="button" class="btn btn-danger">Equipo</button>
+      </div>
+      <div class="redes_sociales">
+        <img src="~/img/redes.png" />
+      </div>
+    </section>
+    <img src="~/img/logoFooter.png" id="logo2" />
+  </section>
+</footer>
+
+@section Scripts {
+  <script>
+    document.getElementById("formRegistro").addEventListener("submit", function (e) {
+      const chk = document.getElementById("chkTerminos");
+      const msg = document.getElementById("mensajeError");
+      if (!chk.checked) {
+        e.preventDefault();
+        msg.classList.remove("oculto");
+      } else {
+        msg.classList.add("oculto");
+      }
+    });
+  </script>
+
+  <style>
+    .error {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .oculto {
+      display: none;
+    }
+
+    header img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .check {
+      margin-top: 5%;
+    }
+
+    input {
+      margin-top: 3%;
+    }
+
+    h1 {
+      font-size: 150%;
+      text-align: center;
+      margin-bottom: 12%;
+    }
+
+    .main-subscripcion {
+      font-family: 'Arial', sans-serif;
+      background-color: #FFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3% 0;
+      height: 90%;
+    }
+
+    .subscription-form {
+      background-color: #fff;
+      padding: 2%;
+      padding-bottom: 4%;
+      border-radius: 15px;
+      width: 20%;
+      border: solid #75BBEE 1px;
+      height: 60%;
+    }
+
+    .subscription-form h2 {
+      text-align: center;
+      margin-bottom: 6%;
+      color: #333;
+    }
+
+    .form-group {
+      display: block;
+      margin-bottom: 2%;
+      color: #2E286B;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 90%;
+      padding: 2% 3%;
+      border: 1px solid #75BBEE;
+      border-radius: 10px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #2E286B;
+      outline: none;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 3%;
+      background-color: #2E286B;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 12%;
+    }
+
+    .submit-btn:hover {
+      background-color: #2E286B;
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-buttons a img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .social-buttons a img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+}

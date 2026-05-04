@@ -1,1 +1,0 @@
-escanea, hacelo, altoque
