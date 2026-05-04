@@ -1,7 +1,3 @@
-/* ---------------------- */
-/* -------- GLOBAL ------- */
-/* ---------------------- */
-
 body {
   font-family: 'Arial Rounded', Arial, sans-serif;
   overflow-x: hidden;
@@ -108,28 +104,24 @@ footer img {
   display: none;
 }
 
-/* ---------------------------- */
-/* -------   MOBILE   --------- */
-/* ---------------------------- */
+@media (width <=600px) {
 
-@media (width <= 600px) {
+  .right {
+    right: -10% !important;
+  }
 
-  .right 
-  {
-    right: -10% !important; 
+  .card {
+    width: 200% !important;
+    margin-left: 75% !important;
   }
-  .card 
-  {
-    width: 200% !important; 
-    margin-left: 75% !important; 
-  }
+
   body {
     overflow-x: hidden;
     width: 100%;
   }
 
   html {
-    margin-left: -5% !important; 
+    margin-left: -5% !important;
     width: 100%;
     display: block;
   }
@@ -138,12 +130,10 @@ footer img {
     width: 100% !important;
   }
 
-  /* DESAPARECEN LOS BOTONES NORMALES */
   .botones-navegacion {
     display: none !important;
   }
 
-  /* APARECE LA HAMBURGUESA */
   .hamburguesa {
     display: flex !important;
     flex-direction: column;
@@ -167,7 +157,7 @@ footer img {
     font-size: 70% !important;
     margin-left: 0% !important;
     margin-right: 10% !important;
-    margin-top: 10% !important; 
+    margin-top: 10% !important;
   }
 
   header img {
@@ -193,40 +183,43 @@ footer img {
     width: 250% !important;
     font-size: 60% !important;
     text-align: center;
-    margin-left: 35% !important;  
+    margin-left: 35% !important;
   }
-.headerLanding img 
-{
-  width: 50% !important;
-  margin-left: 5% !important; 
-  margin-bottom: 5% !important; 
-}
-.headerLanding button 
-{
-  width: 20% !important; 
-  margin-right: 1% !important;
-  font-size: 70% !important; 
-}
+
+  .headerLanding img {
+    width: 50% !important;
+    margin-left: 5% !important;
+    margin-bottom: 5% !important;
+  }
+
+  .headerLanding button {
+    width: 20% !important;
+    margin-right: 1% !important;
+    font-size: 70% !important;
+  }
+
   #Loguito {
     width: 1000% !important;
     margin-top: -400% !important;
     margin-left: -770% !important;
   }
-  #tukicoin 
-  {
-    width: 9% !important; 
-    margin-top: 13% !important; 
+
+  #tukicoin {
+    width: 9% !important;
+    margin-top: 13% !important;
   }
-  #usuario 
-  {
-    width: 8% !important; 
-    margin-top: 11% !important; 
-    margin-right: 10% !important; 
+
+  #usuario {
+    width: 8% !important;
+    margin-top: 11% !important;
+    margin-right: 10% !important;
   }
-  #tukimonedas, header h3
-  {
-    display: none; 
+
+  #tukimonedas,
+  header h3 {
+    display: none;
   }
+
   .titulo-main-section button {
     padding: 10% !important;
     width: 110% !important;
@@ -238,21 +231,24 @@ footer img {
     width: 180% !important;
     margin-left: -77%;
   }
-  .main-landing
-  {
-    margin-left: -10% !important; 
+
+  .main-landing {
+    margin-left: -10% !important;
   }
+
   .tarjetas {
     flex-direction: column;
     margin-left: 40% !important;
     width: 150% !important;
     height: 110% !important;
     margin-top: -5% !important;
-    font-size: 90% !important;  
-    
+    font-size: 90% !important;
+
   }
 
-  .organizate, .divertite, .motivate {
+  .organizate,
+  .divertite,
+  .motivate {
     width: 90% !important;
   }
 
@@ -265,38 +261,31 @@ footer img {
     margin-top: 20% !important;
   }
 
-  /* ---------------------- */
-  /* ----- CARRUSEL -------- */
-  /* ---------------------- */
-
   .carousel-grid {
     margin-top: 15% !important;
-    gap: 30% !important;   /* REDUCIDO, ya no deja área blanca enorme */
+    gap: 30% !important;
     margin-left: -5% !important;
-    width: 110% !important; /* área visible más contenida */
+    width: 110% !important;
   }
-  .carousel 
-  {
-    margin-left: -13% !important; 
+
+  .carousel {
+    margin-left: -13% !important;
   }
-.left 
-{
-  left: 5% !important; 
-}
-.right 
-{
-  right: -3% !important; 
-}
+
+  .left {
+    left: 5% !important;
+  }
+
+  .right {
+    right: -3% !important;
+  }
+
   .carousel-container {
     margin: 0 !important;
     margin-left: 20% !important;
     width: 70% !important;
-    margin-top: -10% !important; 
+    margin-top: -10% !important;
   }
-
-  /* ---------------------- */
-  /* ------ FOOTER -------- */
-  /* ---------------------- */
 
   footer {
     margin-top: 40% !important;
@@ -308,11 +297,8 @@ footer img {
     font-size: 75% !important;
     margin-left: 25% !important;
     float: left;
-    margin-top: 5% !important;  
+    margin-top: 5% !important;
   }
 
-  .headerLanding 
-  {
-    
-  }
+  .headerLanding {}
 }

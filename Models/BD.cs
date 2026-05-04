@@ -36,7 +36,7 @@ public static class BD
             storedProcedure,
             new { idUsuario = idUsuario },
             commandType: CommandType.StoredProcedure
-        ).FirstOrDefault(); // Solo tomamos el primer (o único) resultado
+        ).FirstOrDefault();
 
         return preferencias;
     }
@@ -69,7 +69,7 @@ public static List<int> ObtenerRecompensasUsuario(int idUsuario)
         SqlDataReader reader = cmd.ExecuteReader();
         while (reader.Read())
         {
-            listaRecompensas.Add(reader.GetInt32(0)); // idRecompensa
+            listaRecompensas.Add(reader.GetInt32(0));
         }
         
         reader.Close();
@@ -99,7 +99,7 @@ public static int RestarTukis(int idUsuario, int idRecompensa)
 
         connection.Execute("restarTukimonedas", parameters, commandType: CommandType.StoredProcedure);
 
-        return parameters.Get<int>("ReturnValue"); // 1 = OK, -1 = ya la tiene, -2 = sin saldo
+        return parameters.Get<int>("ReturnValue");
     }
 }
 
@@ -158,12 +158,11 @@ public static int RestarTukis(int idUsuario, int idRecompensa)
     {
         string storedProcedure = "CrearPreferencia";
 
-        // Aquí los nombres del objeto deben coincidir con los parámetros del SP
         var parametros = new
         {
             nombre = nombre,
-            usuario = usuario,      // coincide con @usuario en el SP
-            metodo = metodos,       // coincide con @metodo en el SP
+            usuario = usuario,
+            metodo = metodos,
             anioEscolar = anioEscolar,
             hobbies = hobbies,
             objetivos = objetivos,

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AlToque")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+639e0165b146b9607e4675236d958409c6dfe54d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2cd214e6989789fe5a4c21d711328e9eeb802e72")]
 [assembly: System.Reflection.AssemblyProductAttribute("AlToque")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AlToque")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

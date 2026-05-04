@@ -55,7 +55,6 @@
     {
         <div class="tarea-item">
 
-            <!-- BOTÓN PARA VER TAREA -->
             <button class="boton-tarea"
                     data-titulo="@tarea.titulo"
                     data-descripcion="@tarea.descripcion"
@@ -64,7 +63,6 @@
                 @tarea.titulo
             </button>
 
-            <!-- BOTÓN EDITAR -->
             <button type="button" class = "editar"
                     onclick="abrirPopupEditar(
                         '@tarea.titulo',
@@ -76,7 +74,6 @@
                 <img src="~/img/lapiz.png" width="20" height="20" >
             </button>
 
-            <!-- BOTÓN ELIMINAR -->
             <button type="button" class="BotonEliminar" data-titulo="@tarea.titulo">
                 <img src="~/img/basura.png" alt="Eliminar" width="24" height="24" />
             </button>
